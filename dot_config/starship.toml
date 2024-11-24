@@ -1,1 +1,19 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Timeout for commands executed by starship (in milliseconds).
+# uint64 max = 2^64−1 = 18446744073709551615
+command_timeout = 999999999999999999
+
+# Timeout for starship to scan files (in milliseconds).
+scan_timeout = 999999999999999999
+
+[custom.git_simple]
+command = "starship-git-simple"
+require_repo = true
+when = true
 ignore_timeout = true
+style = ""
