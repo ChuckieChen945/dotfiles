@@ -1,0 +1,222 @@
+{
+    "apps": [
+        {
+            "Name": "pwsh",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "7zip",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "anki",
+            "Source": "Chuckie_s"
+        },
+        {
+            "##": "为scoop启用aria2加速",
+            "Name": "aria2",
+            "Source": "main"
+        },
+        {
+            "Name": "calibre",
+            "Source": "extras"
+        },
+        {
+            "Name": "CascadiaCode-NF",
+            "Source": "nerd-fonts"
+        },
+        {
+            "Name": "ccleaner",
+            "Source": "extras"
+        },
+        {
+            "Name": "dismplusplus",
+            "Source": "extras"
+        },
+        {
+            "Name": "everything",
+            "Source": "extras"
+        },
+        {
+            "Name": "ffmpeg",
+            "Source": "main"
+        },
+        {
+            "Name": "git",
+            "Source": "main"
+        },
+        {
+            "##": "support unpacking InnoSetup files",
+            "Name": "innounp",
+            "Source": "main"
+        },
+        {
+            "Name": "keepassxc",
+            "Source": "extras"
+        },
+        {
+            "##": "将potplayer设为默认播放器，个性化设置",
+            "Name": "potplayer",
+            "Source": "extras"
+        },
+        {
+            "Name": "powertoys",
+            "Source": "extras"
+        },
+        {
+            "Name": "pycharm",
+            "Source": "extras"
+        },
+        {
+            "Name": "python",
+            "Source": "main"
+        },
+        {
+            "Name": "screenoff",
+            "Source": "extras"
+        },
+        {
+            "Name": "starship",
+            "Source": "main"
+        },
+        {
+            "Name": "v2rayn",
+            "Source": "extras"
+        },
+        {
+            "##": [
+                "the latest Microsoft Visual C++ Redistributable Packages 2015–2022 x64, AKA Microsoft Visual C++ runtime",
+                "starship 依赖"
+            ],
+            "Name": "vcredist-aio",
+            "Source": "extras"
+        },
+        {
+            "Name": "vscode",
+            "Source": "extras"
+        },
+        {
+            "Name": "wechat",
+            "Source": "extras"
+        },
+        {
+            "##": [
+                "powertoys 依赖 DotNet Desktop Runtime 6",
+                "注意，是dot net runtime不是dotnet sdk(versions/dotnet6-sdk)"
+            ],
+            "Name": "windowsdesktop-runtime",
+            "Source": "extras"
+        },
+        {
+            "Name": "gsudo",
+            "Source": "main"
+        },
+        {
+            "##": [
+                "在pwsh中为Scoop提供自动补全",
+                "需在pwsh中配置:",
+                "Import-Module \"$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\\modules\\scoop-completion"
+            ],
+            "Name": "scoop-completion",
+            "Source": "extras"
+        },
+        {
+            "Name": "chezmoi",
+            "Source": "main"
+        },
+        {
+            "##": "TODO:https://github.com/ajeetdsouza/zoxide 配置zoxide",
+            "Name": "zoxide",
+            "Source": "main"
+        },
+        {
+            "Name": "posh-git",
+            "Source": "extras"
+        },
+        {
+            "Name": "clipboard",
+            "Source": "main"
+        },
+        {
+            "Name": "tim",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "Name": "baidunetdisk",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "##": [
+                "pip 编译时要用到Microsoft Visual C++ 14 Build Tools（不是runtime）",
+                "官方下载：在<https://my.visualstudio.com/Downloads> 中搜索Build Tools",
+                "TODO:这个包是2019版的，参考以下内容，提交pr将其升级为2022",
+                "https://github.com/okibcn/ScoopMaster/blob/master/bucket/vs_buildtools.json",
+                "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e"
+            ],
+            "Name": "vs_buildtools",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "##": "TODO：自动安装98五笔",
+            "Name": "WubiLex",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "##": [
+                "# TODO:hosts中添加：",
+                "# 127.0.0.1 hub5btmain.sandai.net",
+                "# 127.0.0.1 hub5emu.sandai.net",
+                "# 127.0.0.1 upgrade.xl9.xunlei.com"
+            ],
+            "Name": "ThunderSpeed",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "Name": "starship",
+            "Source": "main"
+        },
+        {
+            "Name": "CascadiaCode-NF",
+            "Source": "nerd-fonts"
+        },
+        {
+            "Name": "archwsl",
+            "Source": "extras"
+        },
+        {
+            "Name":"windows-terminal",
+            "Source":"extras"
+        }
+    ],
+    "##": {
+        "##": "该包待加入extras bucket",
+        "##Name": "everythingtoolbar",
+        "##Source": "extras"
+    },
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main"
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras"
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts"
+        },
+        {
+            "Name": "Chuckie_s",
+            "Source": "https://github.com/ChuckieChen945/Chuckie_s"
+        },
+        {
+            "Name": "okibcn_ScoopMaster",
+            "Source": "https://github.com/okibcn/ScoopMaster"
+        }
+    ],
+    "config": {
+        "proxy": "127.0.0.1:10809",
+        "cache_path": "D:\\Downloads\\scoop_cache\\"
+    }
+}
