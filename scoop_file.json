@@ -5,6 +5,10 @@
             "Source": "Chuckie_s"
         },
         {
+            "Name": "windows-terminal",
+            "Source": "Chuckie_s"
+        },
+        {
             "Name": "7zip",
             "Source": "Chuckie_s"
         },
@@ -115,7 +119,7 @@
             "##": [
                 "在pwsh中为Scoop提供自动补全",
                 "需在pwsh中配置:",
-                "Import-Module \"$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\\modules\\scoop-completion"
+                "Import-Module scoop-completion"
             ],
             "Name": "scoop-completion",
             "Source": "extras"
@@ -153,7 +157,7 @@
                 "https://github.com/okibcn/ScoopMaster/blob/master/bucket/vs_buildtools.json",
                 "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e"
             ],
-            "Name": "vs_buildtools",
+            "Name": "msvc2022-buildtools-extra",
             "Source": "okibcn_ScoopMaster"
         },
         {
@@ -184,7 +188,19 @@
             "Source": "extras"
         },
         {
-            "Name":"windows-terminal",
+            "Name":"bbdown",
+            "Source":"main"
+        },
+        {
+            "Name":"kms-vl-all-aio_cc713",
+            "Source":"Chuckie_s"
+        },
+        {
+            "Name":"komorebi",
+            "Source":"extras"
+        },
+        {
+            "Name":"whkd",
             "Source":"extras"
         }
     ],
