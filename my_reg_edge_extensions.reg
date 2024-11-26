@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+
+; 用于自动安装Edge插件
+; https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+; GitHub加速
+"alhnbdjjbokpmilgemopoomnldpejihb"=""
+; keepassxc
+"pdffhmdngciaglkoonimfcmckehcpafo"=""
+; tampermonkey TODO:在油猴插件中添加取消知乎固定导航栏的脚本，或用stylish插件
+"iikmkjmpaadaobahmlepeloendndfphd"=""
+; vimium-c-全键盘操作浏览器
+"aibcglbfblnogfjhbcmmpobjhnomhcdo"=""
+; i-dont-care-about-cookie
+"oholpbloipjbbhlhohaebmieiiieioal"=""
+; smart-toc
+"iaolkehclkpehgahmbpcjoilglcfffab"=""
+; adblock-plus-免费的广告拦截器
+"gmgoamodcdcjnbaobigkjelfplakmdhh"=""
+; Cookie-Editor
+"neaplmfkghagebokkhpjpoebhdledlfi"=""
+; Stylish - Custom themes for any website
+"pibpbbbcgeakmkmhgnllkkjdgpoabdge"=""
+; Vimium C - 全键盘操作浏览器
+"aibcglbfblnogfjhbcmmpobjhnomhcdo"=""
+; 篡改猴
+"iikmkjmpaadaobahmlepeloendndfphd"=""

@@ -5,7 +5,7 @@
             "Source": "Chuckie_s"
         },
         {
-            "Name": "windows-terminal",
+            "Name": "windowsterminal-shell",
             "Source": "Chuckie_s"
         },
         {
@@ -188,20 +188,24 @@
             "Source": "extras"
         },
         {
-            "Name":"bbdown",
-            "Source":"main"
+            "Name": "bbdown",
+            "Source": "main"
         },
         {
-            "Name":"kms-vl-all-aio_cc713",
-            "Source":"Chuckie_s"
+            "Name": "kms-vl-all-aio_cc713",
+            "Source": "Chuckie_s"
         },
         {
-            "Name":"komorebi",
-            "Source":"extras"
+            "Name": "komorebi",
+            "Source": "extras"
         },
         {
-            "Name":"whkd",
-            "Source":"extras"
+            "Name": "whkd",
+            "Source": "extras"
+        },
+        {
+            "Name": "pureref",
+            "Source": "Chuckie_s"
         }
     ],
     "##": {

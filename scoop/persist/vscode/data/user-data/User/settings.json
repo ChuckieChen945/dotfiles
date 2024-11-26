@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "vim.useSystemClipboard": true,
+    "diffEditor.maxComputationTime": 0,
+    "editor.multiCursorLimit": 100000,
+    "workbench.colorCustomizations": {},
+    "settingsSync.ignoredExtensions": []
+}

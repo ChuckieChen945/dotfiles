@@ -13,4 +13,8 @@ Invoke-Expression (&starship init powershell)
 # Add it to your $PROFILE to make it permanent.
 Import-Module gsudoModule
 
+# enable scoop completion in current shell, use absolute path because PowerShell Core not respect $env:PSModulePath
+# Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+# 需要安装scoop-completion
+# scoop install scoop-completion -bucket extras
 Import-Module scoop-completion
