@@ -14,7 +14,7 @@
         },
         {
             "Name": "anki",
-            "Source": "Chuckie_s"
+            "Source": "extras"
         },
         {
             "##": "为scoop启用aria2加速",
@@ -24,10 +24,6 @@
         {
             "Name": "calibre",
             "Source": "extras"
-        },
-        {
-            "Name": "CascadiaCode-NF",
-            "Source": "nerd-fonts"
         },
         {
             "Name": "ccleaner",
@@ -59,7 +55,7 @@
             "Source": "extras"
         },
         {
-            "##": "将potplayer设为默认播放器，个性化设置",
+            "##": "TODO:将potplayer设为默认播放器，个性化设置",
             "Name": "potplayer",
             "Source": "extras"
         },
@@ -161,23 +157,18 @@
             "Source": "okibcn_ScoopMaster"
         },
         {
-            "##": "TODO：自动安装98五笔",
             "Name": "WubiLex",
             "Source": "okibcn_ScoopMaster"
         },
         {
             "##": [
-                "# TODO:hosts中添加：",
+                "# hosts中添加：",
                 "# 127.0.0.1 hub5btmain.sandai.net",
                 "# 127.0.0.1 hub5emu.sandai.net",
                 "# 127.0.0.1 upgrade.xl9.xunlei.com"
             ],
             "Name": "ThunderSpeed",
             "Source": "okibcn_ScoopMaster"
-        },
-        {
-            "Name": "starship",
-            "Source": "main"
         },
         {
             "Name": "CascadiaCode-NF",
@@ -192,10 +183,6 @@
             "Source": "main"
         },
         {
-            "Name": "kms-vl-all-aio_cc713",
-            "Source": "Chuckie_s"
-        },
-        {
             "Name": "komorebi",
             "Source": "extras"
         },
@@ -205,6 +192,34 @@
         },
         {
             "Name": "pureref",
+            "Source": "anderlli0053_DEV-tools"
+        },
+        {
+            "Name": "md24",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "my25",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "of",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "sp",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "zb",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "ps",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "ad",
             "Source": "Chuckie_s"
         }
     ],
@@ -233,6 +248,10 @@
         {
             "Name": "okibcn_ScoopMaster",
             "Source": "https://github.com/okibcn/ScoopMaster"
+        },
+        {
+            "Name": "anderlli0053_DEV-tools",
+            "Source": "https://github.com/anderlli0053/DEV-tools"
         }
     ],
     "config": {
