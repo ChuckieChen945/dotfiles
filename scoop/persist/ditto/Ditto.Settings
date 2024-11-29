@@ -1,0 +1,14 @@
+[Ditto]
+DBPath3=Ditto.db
+
+
+LanguageFile=Chinese Simplified
+MaxEntries=1000
+ShowStartupMessage=0
+# 单击和按Enter粘贴
+QP_ShortCut_23_1_A=1
+QP_ShortCut_23_1_B=0
+TripDate=1732891915
+TripCopies=1
+TotalDate=1732891915
+TotalCopies=1

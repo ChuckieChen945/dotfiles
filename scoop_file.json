@@ -1,6 +1,38 @@
 {
     "apps": [
         {
+            "Name": "md24",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "my25",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "zentools",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "of",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "sp",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "zb",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "ps",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "ad",
+            "Source": "Chuckie_s"
+        },
+        {
             "Name": "pwsh",
             "Source": "Chuckie_s"
         },
@@ -11,6 +43,43 @@
         {
             "Name": "7zip",
             "Source": "Chuckie_s"
+        },
+        {
+            "Name": "tim",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "Name": "baidunetdisk",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "##": [
+                "pip 编译时要用到Microsoft Visual C++ 14 Build Tools（不是runtime）",
+                "官方下载：在<https://my.visualstudio.com/Downloads> 中搜索Build Tools",
+                "TODO:这个包是2019版的，参考以下内容，提交pr将其升级为2022",
+                "https://github.com/okibcn/ScoopMaster/blob/master/bucket/vs_buildtools.json",
+                "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e"
+            ],
+            "Name": "msvc2022-buildtools-extra",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "Name": "WubiLex",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "##": [
+                "# hosts中添加：",
+                "# 127.0.0.1 hub5btmain.sandai.net",
+                "# 127.0.0.1 hub5emu.sandai.net",
+                "# 127.0.0.1 upgrade.xl9.xunlei.com"
+            ],
+            "Name": "ThunderSpeed",
+            "Source": "okibcn_ScoopMaster"
+        },
+        {
+            "Name": "pureref",
+            "Source": "anderlli0053_DEV-tools"
         },
         {
             "Name": "anki",
@@ -138,43 +207,6 @@
             "Source": "extras"
         },
         {
-            "Name": "clipboard",
-            "Source": "main"
-        },
-        {
-            "Name": "tim",
-            "Source": "okibcn_ScoopMaster"
-        },
-        {
-            "Name": "baidunetdisk",
-            "Source": "okibcn_ScoopMaster"
-        },
-        {
-            "##": [
-                "pip 编译时要用到Microsoft Visual C++ 14 Build Tools（不是runtime）",
-                "官方下载：在<https://my.visualstudio.com/Downloads> 中搜索Build Tools",
-                "TODO:这个包是2019版的，参考以下内容，提交pr将其升级为2022",
-                "https://github.com/okibcn/ScoopMaster/blob/master/bucket/vs_buildtools.json",
-                "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e"
-            ],
-            "Name": "msvc2022-buildtools-extra",
-            "Source": "okibcn_ScoopMaster"
-        },
-        {
-            "Name": "WubiLex",
-            "Source": "okibcn_ScoopMaster"
-        },
-        {
-            "##": [
-                "# hosts中添加：",
-                "# 127.0.0.1 hub5btmain.sandai.net",
-                "# 127.0.0.1 hub5emu.sandai.net",
-                "# 127.0.0.1 upgrade.xl9.xunlei.com"
-            ],
-            "Name": "ThunderSpeed",
-            "Source": "okibcn_ScoopMaster"
-        },
-        {
             "Name": "CascadiaCode-NF",
             "Source": "nerd-fonts"
         },
@@ -195,36 +227,8 @@
             "Source": "extras"
         },
         {
-            "Name": "pureref",
-            "Source": "anderlli0053_DEV-tools"
-        },
-        {
-            "Name": "md24",
-            "Source": "Chuckie_s"
-        },
-        {
-            "Name": "my25",
-            "Source": "Chuckie_s"
-        },
-        {
-            "Name": "of",
-            "Source": "Chuckie_s"
-        },
-        {
-            "Name": "sp",
-            "Source": "Chuckie_s"
-        },
-        {
-            "Name": "zb",
-            "Source": "Chuckie_s"
-        },
-        {
-            "Name": "ps",
-            "Source": "Chuckie_s"
-        },
-        {
-            "Name": "ad",
-            "Source": "Chuckie_s"
+            "Name": "ditto",
+            "Source": "extras"
         }
     ],
     "##": {
