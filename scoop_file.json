@@ -46,6 +46,10 @@
             "Source": "main"
         },
         {
+            "Name": "git-lfs",
+            "Source": "main"
+        },
+        {
             "##": "support unpacking InnoSetup files",
             "Name": "innounp",
             "Source": "main"

@@ -1,0 +1,76 @@
+global proc shelf_Custom () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\nviews = {\n    'front': (0, 0, 1, 0, 0, 0),\n    'back': (0, 0, -1, 0, 180, 0),\n    'left': (-1, 0, 0, 0, -90, 0),\n    'right': (1, 0, 0, 0, 90, 0),\n    'top': (0, -1, 0, 90, 0, 0),\n    'bottom': (0, 1, 0, -90, 0, 0)\n}\n\ndef create_camera(view_name, translation, rotation):\n    \"\"\"\n    Create a camera for the specified view.\n    \n    :param view_name: The name of the view (e.g., 'front', 'back').\n    :param translation: A list containing the translation values (x, y, z).\n    :param rotation: A list containing the rotation values (x, y, z).\n    :return: The created camera name.\n    \"\"\"\n    cam_name = f'{view_name}_cam'\n    camera, _ = cmds.camera(name=cam_name, orthographic=True)\n    cmds.setAttr(f'{camera}.translate', *translation)\n    cmds.setAttr(f'{camera}.rotate', *rotation)\n    cmds.setAttr(f'{camera}.visibility', 0)  # Set camera visibility to off\n    return camera\n\ndef create_image_plane(image_file, rotation, alpha_gain=0.5):\n    \"\"\"\n    Create an image plane with specified parameters.\n    \n    :param image_file: The file path of the image.\n    :param rotation: A list containing the rotation values (x, y, z).\n    :param alpha_gain: The alpha gain for the image plane.\n    :return: The created image plane name.\n    \"\"\"\n    image_plane = cmds.imagePlane(fileName=image_file)[0]\n    cmds.setAttr(f'{image_plane}.rotate', *rotation)\n    cmds.setAttr(f'{image_plane}.alphaGain', alpha_gain)\n    return image_plane\n\ndef position_image_planes(image_planes, spacing, ground_offset):\n    \"\"\"\n    Position image planes to avoid overlap based on the number of images.\n    \n    :param image_planes: A list of image plane names.\n    :param spacing: The spacing value to prevent overlap.\n    :param ground_offset: The offset to position image planes above the ground.\n    \"\"\"\n    for i, image_plane in enumerate(image_planes):\n        if i < 6:\n            view = list(views.keys())[i]\n            translation = [val * spacing * 1.2 for val in views[view][:3]]\n            translation[1] += ground_offset  # Raise Y coordinate to ensure above ground\n        else:\n            z_position = spacing * 1.2 + (i - 5) * 5\n            translation = [0, ground_offset, z_position]\n        \n        cmds.setAttr(f'{image_plane}.translate', *translation)\n\ndef create_image_planes_for_views(image_files):\n    \"\"\"\n    Create image planes in Maya based on the number of images selected.\n    \n    :param image_files: A list of image file paths.\n    \"\"\"\n\n    cameras_group = cmds.group(em=True, name='Cameras_Group')\n    image_planes_group = cmds.group(em=True, name='Image_Planes_Group')\n    image_planes_layer = cmds.createDisplayLayer(name='Image_Planes_Layer', empty=True)\n\n    image_planes = []\n    spacing = 0\n    ground_offset = 0\n\n    # Create cameras and image planes\n    for i, image_file in enumerate(image_files):\n        if i < 6:\n            view = list(views.keys())[i]\n            translation = [val * 100 for val in views[view][:3]]\n            rotation = views[view][3:]\n            create_camera(view, translation, rotation)\n            image_plane = create_image_plane(image_file, rotation)\n        else:\n            rotation = [0, 0, 0]\n            image_plane = create_image_plane(image_file, rotation)\n\n        spacing = max(spacing, cmds.getAttr(f\"{image_plane}.width\"), cmds.getAttr(f\"{image_plane}.height\"))\n        ground_offset = max(ground_offset, cmds.getAttr(f\"{image_plane}.height\") / 2)\n\n        cmds.parent(image_plane, image_planes_group)\n        cmds.editDisplayLayerMembers(image_planes_layer, image_plane)\n        image_planes.append(image_plane)\n\n    # Position image planes to avoid overlap\n    position_image_planes(image_planes, spacing, ground_offset)\n\ndef select_images():\n    \"\"\"\n    Prompts the user to select image files and returns the list of file paths.\n    \"\"\"\n    image_files = cmds.fileDialog2(\n        fileFilter=\"Images (*.jpg *.png *.tiff *.bmp)\",\n        dialogStyle=2,\n        cap=\"Select images for views\",\n        fileMode=4\n    )\n\n    if not image_files:\n        raise RuntimeError(\"Selection canceled or no files selected.\")\n\n    return image_files\n\n# Example usage: Prompt the user to select images and then create the image planes\ntry:\n    image_files = select_images()  # Get image file paths from the user\n    create_image_planes_for_views(image_files)  # Create the image planes based on the user's selections\n    print(f\"{len(image_files)} image planes and corresponding cameras have been created successfully!\")\nexcept RuntimeError as e:\n    print(f\"Error: {e}\")\nexcept ValueError as e:\n    print(f\"Error: {e}\")" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import_image_planes" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -imageOverlayLabel "import_image_planes" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 0
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nviews = {\n    'front': (0, 0, 1, 0, 0, 0),\n    'back': (0, 0, -1, 0, 180, 0),\n    'left': (-1, 0, 0, 0, -90, 0),\n    'right': (1, 0, 0, 0, 90, 0),\n    'top': (0, -1, 0, 90, 0, 0),\n    'bottom': (0, 1, 0, -90, 0, 0)\n}\n\ndef create_camera(view_name, translation, rotation):\n    \"\"\"\n    Create a camera for the specified view.\n    \n    :param view_name: The name of the view (e.g., 'front', 'back').\n    :param translation: A list containing the translation values (x, y, z).\n    :param rotation: A list containing the rotation values (x, y, z).\n    :return: The created camera name.\n    \"\"\"\n    cam_name = f'_{view_name}_cam'\n    camera, _ = cmds.camera(name=cam_name, orthographic=True)\n    cmds.setAttr(f'{camera}.translate', *translation)\n    cmds.setAttr(f'{camera}.rotate', *rotation)\n    cmds.setAttr(f'{camera}.visibility', 0)  # Set camera visibility to off\n    return camera\n\ndef create_image_plane(image_file, rotation, alpha_gain=0.5):\n    \"\"\"\n    Create an image plane with specified parameters.\n    \n    :param image_file: The file path of the image.\n    :param rotation: A list containing the rotation values (x, y, z).\n    :param alpha_gain: The alpha gain for the image plane.\n    :return: The created image plane name.\n    \"\"\"\n    image_plane = cmds.imagePlane(fileName=image_file)[0]\n    cmds.setAttr(f'{image_plane}.rotate', *rotation)\n    cmds.setAttr(f'{image_plane}.alphaGain', alpha_gain)\n    \n\n    \n    return image_plane\n\ndef position_image_planes(image_planes, spacing, ground_offset):\n    \"\"\"\n    Position image planes to avoid overlap based on the number of images.\n    \n    :param image_planes: A list of image plane names.\n    :param spacing: The spacing value to prevent overlap.\n    :param ground_offset: The offset to position image planes above the ground.\n    \"\"\"\n    for i, image_plane in enumerate(image_planes):\n        if i < 6:\n            view = list(views.keys())[i]\n            translation = [val * spacing * 1.2 for val in views[view][:3]]\n            translation[1] += ground_offset  # Raise Y coordinate to ensure above ground\n        else:\n            z_position = spacing * 1.2 + (i - 5) * 5\n            translation = [0, ground_offset, z_position]\n        \n        cmds.setAttr(f'{image_plane}.translate', *translation)\n        # Set pivot point to (0, 0, 0)\n        cmds.xform(image_plane, ws=True, piv=(0, ground_offset, 0))\n\ndef create_cameras():\n    \"\"\"\n    create 6 cameras \n    \"\"\"\n    cameras_group = cmds.group(em=True, name='Cameras_Group')\n\n    for i in range(6):\n        view = list(views.keys())[i]\n        translation = [val * 100 for val in views[view][:3]]\n        rotation = views[view][3:]\n        camera = create_camera(view, translation, rotation)\n        cmds.parent(camera,cameras_group)\n\n\ndef create_image_planes_for_views(image_files):\n    \"\"\"\n    Create image planes in Maya based on the number of images selected.\n    \n    :param image_files: A list of image file paths.\n    \"\"\"\n    image_planes_group = cmds.group(em=True, name='Image_Planes_Group')\n    image_planes_layer = cmds.createDisplayLayer(name='Image_Planes_Layer', empty=True)\n\n    image_planes = []\n    spacing = 0\n    ground_offset = 0\n\n    # Create image planes\n    for i, image_file in enumerate(image_files):\n        if i < 6:\n            view = list(views.keys())[i]\n            rotation = views[view][3:]\n            image_plane = create_image_plane(image_file, rotation)\n        else:\n            rotation = [0, 0, 0]\n            image_plane = create_image_plane(image_file, rotation)\n\n        spacing = max(spacing, cmds.getAttr(f\"{image_plane}.width\"), cmds.getAttr(f\"{image_plane}.height\"))\n        ground_offset = max(ground_offset, cmds.getAttr(f\"{image_plane}.height\") / 2)\n\n        cmds.parent(image_plane, image_planes_group)\n        cmds.editDisplayLayerMembers(image_planes_layer, image_plane)\n        image_planes.append(image_plane)\n\n    # Position image planes to avoid overlap\n    position_image_planes(image_planes, spacing, ground_offset)\n\n    # 创建一个立方体，用于帮助调整image planes的位置\n    cube = cmds.polyCube()[0]\n    # 移动立方体\n    cmds.setAttr(f\"{cube}.translate\", 0, ground_offset, 0)\n\ndef select_images():\n    \"\"\"\n    Prompts the user to select image files and returns the list of file paths.\n    \"\"\"\n    image_files = cmds.fileDialog2(\n        fileFilter=\"Images (*.jpg *.png *.tiff *.bmp)\",\n        dialogStyle=2,\n        cap=\"Select images for views\",\n        fileMode=4\n    )\n\n    if not image_files:\n        raise RuntimeError(\"Selection canceled or no files selected.\")\n\n    return image_files\n\n# Example usage: Prompt the user to select images and then create the image planes\ntry:\n    image_files = select_images()  # Get image file paths from the user\n    create_image_planes_for_views(image_files)  # Create the image planes based on the user's selections\n    create_cameras()\n\n\n    print(f\"{len(image_files)} image planes and corresponding cameras have been created successfully!\")\nexcept RuntimeError as e:\n    print(f\"Error: {e}\")\nexcept ValueError as e:\n    print(f\"Error: {e}\")" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "python(\"import zen\");\nevalDeferred(\"zenTools\");\n" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "zenTools" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -imageOverlayLabel "zenTools" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 0
+        -marginHeight 1
+        -command "python(\"import zen\");\nevalDeferred(\"zenTools\");\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

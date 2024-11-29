@@ -1,0 +1,11 @@
+
+
+// Bonus Tools
+// 接受用户许可协议
+optionVar -cat "Bonus Tools" -iv "bonusToolsAcceptedEULA" 1;
+
+// 开启ZenTools
+python("import zen");
+evalDeferred("zenTools");
+
+//
