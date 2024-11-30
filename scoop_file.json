@@ -45,6 +45,10 @@
             "Source": "Chuckie_s"
         },
         {
+            "Name": "vscode",
+            "Source": "Chuckie_s"
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster"
         },
@@ -95,27 +99,11 @@
             "Source": "extras"
         },
         {
-            "Name": "ccleaner",
-            "Source": "extras"
-        },
-        {
-            "Name": "dismplusplus",
-            "Source": "extras"
-        },
-        {
             "Name": "everything",
             "Source": "extras"
         },
         {
-            "Name": "ffmpeg",
-            "Source": "main"
-        },
-        {
             "Name": "git",
-            "Source": "main"
-        },
-        {
-            "Name": "git-lfs",
             "Source": "main"
         },
         {
@@ -165,10 +153,6 @@
             "Source": "extras"
         },
         {
-            "Name": "vscode",
-            "Source": "extras"
-        },
-        {
             "Name": "wechat",
             "Source": "extras"
         },
@@ -183,15 +167,6 @@
         {
             "Name": "gsudo",
             "Source": "main"
-        },
-        {
-            "##": [
-                "在pwsh中为Scoop提供自动补全",
-                "需在pwsh中配置:",
-                "Import-Module scoop-completion"
-            ],
-            "Name": "scoop-completion",
-            "Source": "extras"
         },
         {
             "Name": "chezmoi",
@@ -231,11 +206,6 @@
             "Source": "extras"
         }
     ],
-    "##": {
-        "##": "该包待加入extras bucket",
-        "##Name": "everythingtoolbar",
-        "##Source": "extras"
-    },
     "buckets": [
         {
             "Name": "main",

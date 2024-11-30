@@ -13,8 +13,17 @@ Invoke-Expression (&starship init powershell)
 # Add it to your $PROFILE to make it permanent.
 Import-Module gsudoModule
 
-# enable scoop completion in current shell, use absolute path because PowerShell Core not respect $env:PSModulePath
-# Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
-# 需要安装scoop-completion
-# scoop install scoop-completion -bucket extras
-Import-Module scoop-completion
+# init zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+$paths = @(
+    "C:\Users\Chuckie\.local\share\chezmoi",
+    "C:\Users\Chuckie\scoop\apps",
+    "C:\Users\Chuckie\scoop\persist",
+    "D:\zzz_test",
+    "D:\Chuckie\OneDrive\Desktop",
+    "D:\Downloads\",
+    "D:\Downloads\scoop_cache"
+)
+foreach ($path in $paths) {
+    z add $path
+}

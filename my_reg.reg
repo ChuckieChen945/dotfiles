@@ -60,11 +60,6 @@ Windows Registry Editor Version 5.00
 "EnableAutoTray"=-
 
 ;--------------------------------------------------------------------------------------------
-;   Hide search box
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
-"SearchboxTaskbarMode"=-
-
-;--------------------------------------------------------------------------------------------
 ; open file location in new window
 ; https://github.com/DKCTC/windows-explorer-open-file-background-location
 ; TODO: 将其通过scoop安装
@@ -133,10 +128,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Results\ShellEx\ContextMenuHandlers\OpenContainingFolderMenu]
 @="{37ea3a21-7493-4208-a011-7f9ea79ce9f5}"
 
-;--------------------------------------------------------------------------------------------
-; Status bar (bottom) in Explorer.
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"ShowStatusBar"=dword:00000001
 
 ;--------------------------------------------------------------------------------------------
 ; Show all icons in the Control Panel
@@ -149,33 +140,26 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "Max Cached Icons"="4096"
 
-;--------------------------------------------------------------------------------------------
-; 控制文件和文件夹名的大小写显示。DontPrettyPath=1 禁用路径的美化，使其显示原始大小写。
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"DontPrettyPath"=dword:00000001
 
 ;--------------------------------------------------------------------------------------------
 ;   性能选项
-; 禁止为桌面上的图标启用阴影效果。ListviewShadow=1 启用阴影。
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; 禁止为桌面上的图标启用阴影效果。ListviewShadow=1 启用阴影。
 "ListviewShadow"=dword:00000000
-; 禁用窗口在最小化或最大化时的动画效果。DefaultApplied=1 和 DefaultValue=0 禁用该动画。
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+; 禁用窗口在最小化或最大化时的动画效果。DefaultApplied=1 和 DefaultValue=0 禁用该动画。
 "DefaultApplied"=dword:00000001
 "DefaultValue"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "MinAnimate"="0"
-; 禁止为桌面上的图标启用阴影效果
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"ListviewShadow"=dword:00000000
-; 禁用任务栏按钮的滑动效果。
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"TaskbarAnimations"=dword:00000000
-; 启用屏幕字体的平滑效果。FontSmoothingType=2 和 FontSmoothing=2 启用字体平滑。
-; TODO: 禁止
+
 [HKEY_CURRENT_USER\Control Panel\Desktop]
+; 启用屏幕字体的平滑效果。FontSmoothingType=2 和 FontSmoothing=2 启用字体平滑。 TODO: 禁止
 "FontSmoothingType"=dword:2
 "FontSmoothing"="2"
+
 ; 禁用菜单的滑动和渐变效果。UserPreferencesMask 设置为特定值，禁用动画效果。
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:90,12,01,80
@@ -184,6 +168,10 @@ Windows Registry Editor Version 5.00
 ; Disables UAC
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableLUA"=dword:00000000
+; 需要管理员权限时直接提权，无需弹窗确认
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"ConsentPromptBehaviorAdmin"=dword:00000000
+"ConsentPromptBehaviorUser"=dword:00000000
 
 
 ;--------------------------------------------------------------------------------------------
@@ -193,16 +181,89 @@ Windows Registry Editor Version 5.00
 
 
 ;--------------------------------------------------------------------------------------------
+
+; 在文件资源管理器窗口的标题栏中显示完整路径。
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
+"FullPath"=dword:00000001
+
 ;   文件资源管理器选项
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-; 显示隐藏的文件、文件夹和驱动器。
+; 显示隐藏的文件、文件夹和驱动器。 1:显示隐藏的文件  2:不显示
 "Hidden"=dword:00000001
-; 显示已知文件类型的扩展名。
+; 显示已知文件类型的扩展名。1:隐藏  0:显示
 "HideFileExt"=dword:00000000
 ; 显示受保护的操作系统文件（通常默认隐藏以防误删）。
 "ShowSuperHidden"=dword:00000001
 ; 自动展开导航窗格中的文件夹树到当前打开的文件夹。
 "NavPaneExpandToCurrentFolder" = dword:00000001
-; 在文件资源管理器窗口的标题栏中显示完整路径。
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
-"FullPath"=dword:00000001
+; 文件名保持大写。DontPrettyPath=1 使其显示原始大小写。
+"DontPrettyPath"=dword:00000001
+; 隐藏空的驱动器 1:隐藏  0:不隐藏
+"HideDrivesWithNoMedia"=dword:00000000
+; 隐藏桌面图标，1:隐藏  0:显示
+"HideIcons"=dword:00000000
+; 对图片始终显示图标 1:只显示图标  0:显示缩略图
+"IconsOnly"=dword:00000000
+; 对于其他显示器上的任务栏，0:始终合并  1:在任务栏已满时合并  2:从不合并
+"MMTaskbarGlomLevel"=dword:00000000
+; 在单独的进程打开文件夹窗口，1:是  0:否
+"SeparateProcess"=dword:00000000
+; 用彩色显示加密或压缩的NTFS文件，1:彩色显示  0:否
+"ShowCompColor"=dword:00000001
+; 鼠标指向时显示提示信息，1:显示  0:不显示
+"ShowInfoTip"=dword:00000001
+; Status bar (bottom) in Explorer.1:显示  0:不显示
+"ShowStatusBar"=dword:00000001
+; 在任务栏上显示“任务视图”按钮，1:显示  0:不显示
+"ShowTaskViewButton"=dword:00000000
+; 在缩略图上显示文件类型图标，1:显示  0:不显示
+"ShowTypeOverlay"=dword:00000000
+; 开始菜单中的搜索框的搜索设置，默认值为2，为0时最快
+"Start_SearchFiles"=dword:00000000
+; 开始菜单电源菜单显示更新，1:显示  0:不显示
+"StartShownOnUpgrade"=dword:00000001
+; 任务栏动画，1:启用  0:禁用
+"TaskbarAnimations"=dword:00000000
+; 任务栏小组件按钮，1:显示  0:隐藏
+"TaskbarDa"=dword:00000000
+; 任务栏图标合并， 0:始终合并  1:占满后合并  2:从不合并
+"TaskbarGlomLevel"=dword:00000001
+; 任务栏聊天图标，1:显示  0:不显示
+"TaskbarMn"=dword:00000000
+; 锁定任务栏，1:不锁定 0:锁定
+"TaskbarSizeMove"=dword:00000001
+; 任务栏图标大小，0:默认大任务栏按钮  1:小任务栏按钮
+"TaskbarSmallIcons"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+; 任务栏搜索框状态，0:隐藏 1:仅搜索图标 2:搜索框 3:搜索图标和标签
+"SearchboxTaskbarMode"=dword:00000000
+
+
+;--------------------------------------------------------------------------------------------
+;   在右键菜单中添加创建一个空白文件命令
+; https://superuser.com/questions/920267/shellnew-icon-for-file-type
+[HKEY_CLASSES_ROOT\.]
+@="emptyFile"
+
+[HKEY_CLASSES_ROOT\.\ShellNew]
+"NullFile"=""
+@="Empty File"
+"ItemName"=""
+"IconPath"="C:\\windows\\system32\\imageres.dll,2"
+
+[HKEY_CLASSES_ROOT\.\ShellNew\Config]
+"NoExtension"=""
+
+[-HKEY_CLASSES_ROOT\emptyFile]
+
+[HKEY_CLASSES_ROOT\emptyFile]
+@="Empty File"
+
+[HKEY_CLASSES_ROOT\emptyFile\DefaultIcon]
+@="%SystemRoot%\\system32\\imageres.dll,2"
+
+
+; 将caps lock map 为 ctrl
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00
