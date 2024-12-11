@@ -203,7 +203,7 @@ Windows Registry Editor Version 5.00
 ; 显示已知文件类型的扩展名。1:隐藏  0:显示
 "HideFileExt"=dword:00000000
 ; 显示受保护的操作系统文件（通常默认隐藏以防误删）。
-"ShowSuperHidden"=dword:00000001
+"ShowSuperHidden"=dword:00000000
 ; 自动展开导航窗格中的文件夹树到当前打开的文件夹。
 "NavPaneExpandToCurrentFolder" = dword:00000001
 ; 文件名保持大写。DontPrettyPath=1 使其显示原始大小写。

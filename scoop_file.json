@@ -45,7 +45,11 @@
             "Source": "Chuckie_s"
         },
         {
-            "Name": "vscode",
+            "Name": "vscode_with_extensions",
+            "Source": "Chuckie_s"
+        },
+        {
+            "Name": "file_explorer_enhancer",
             "Source": "Chuckie_s"
         },
         {
@@ -175,6 +179,11 @@
         {
             "##": "TODO:https://github.com/ajeetdsouza/zoxide 配置zoxide",
             "Name": "zoxide",
+            "Source": "main"
+        },
+        {
+            "##":"zoxide的zi命令需要",
+            "Name": "fzf",
             "Source": "main"
         },
         {
