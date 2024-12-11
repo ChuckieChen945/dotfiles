@@ -15,15 +15,3 @@ Import-Module gsudoModule
 
 # init zoxide
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-$paths = @(
-    "C:\Users\Chuckie\.local\share\chezmoi",
-    "C:\Users\Chuckie\scoop\apps",
-    "C:\Users\Chuckie\scoop\persist",
-    "D:\zzz_test",
-    "D:\Chuckie\OneDrive\Desktop",
-    "D:\Downloads\",
-    "D:\Downloads\scoop_cache"
-)
-foreach ($path in $paths) {
-    z add $path
-}
