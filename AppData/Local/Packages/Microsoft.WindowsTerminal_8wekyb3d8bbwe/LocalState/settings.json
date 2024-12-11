@@ -79,6 +79,14 @@
                 "input": "bbdown '' -q '1080p 高清/360p 流畅' --audio-ascending"
             },
             "name": "bbdown download"
+        },
+        {
+            "command":
+            {
+                "action": "sendInput",
+                "input": "edge-tts -t 'This is a test.' -v 'en-GB-LibbyNeural' --write-media 'test.mp3'"
+            },
+            "name": "edge-tts"
         }
     ],
     "copyFormatting": "none",

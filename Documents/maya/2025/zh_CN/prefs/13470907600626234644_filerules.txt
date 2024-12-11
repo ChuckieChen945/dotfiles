@@ -1,0 +1,34 @@
+ocio_profile_version: 2.2
+
+environment:
+  {}
+search_path: ""
+strictparsing: true
+luma: [0.2126, 0.7152, 0.0722]
+
+roles:
+  {}
+
+file_rules:
+  - !<Rule> {name: BaseColor, colorspace: sRGB, pattern: "*[cC]olor*", extension: "*"}
+  - !<Rule> {name: Emissive, colorspace: Raw, pattern: "*[eE]missive*", extension: "*"}
+  - !<Rule> {name: Height, colorspace: Raw, pattern: "*[hH]eight*", extension: "*"}
+  - !<Rule> {name: Metalness, colorspace: Raw, pattern: "*[mM]etalness*", extension: "*"}
+  - !<Rule> {name: Metallic, colorspace: Raw, pattern: "*[mM]etallic*", extension: "*"}
+  - !<Rule> {name: AO, colorspace: Raw, pattern: "*AO*", extension: "*"}
+  - !<Rule> {name: Scattering, colorspace: Raw, pattern: "*[sS]cattering*", extension: "*"}
+  - !<Rule> {name: Normal, colorspace: Raw, pattern: "*[nN]ormal*", extension: "*"}
+  - !<Rule> {name: Roughness, colorspace: Raw, pattern: "*[rR]oughness*", extension: "*"}
+  - !<Rule> {name: tx, colorspace: Raw, pattern: "*", extension: tx}
+  - !<Rule> {name: hdr, colorspace: Raw, pattern: "*", extension: hdr}
+  - !<Rule> {name: exr, colorspace: Raw, pattern: "*", extension: exr}
+  - !<Rule> {name: Default, colorspace: default}
+
+displays:
+  {}
+
+active_displays: []
+active_views: []
+
+colorspaces:
+  []

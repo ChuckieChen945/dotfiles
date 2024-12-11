@@ -156,13 +156,23 @@ Windows Registry Editor Version 5.00
 "MinAnimate"="0"
 
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-; 启用屏幕字体的平滑效果。FontSmoothingType=2 和 FontSmoothing=2 启用字体平滑。 TODO: 禁止
+; 启用屏幕字体的平滑效果。FontSmoothingType=2 和 FontSmoothing=2 启用字体平滑。
 "FontSmoothingType"=dword:2
 "FontSmoothing"="2"
 
-; 禁用菜单的滑动和渐变效果。UserPreferencesMask 设置为特定值，禁用动画效果。
+; UserPreferencesMask 设置为特定值，设置"性能选项"。
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-"UserPreferencesMask"=hex:90,12,01,80
+; 同时关闭"性能选项"窗口中的八项:
+; 2.窗口内的动画控件和元素
+; 3.淡入淡出或滑动菜单到视图
+; 4.滑动打开组合框
+; 5.平滑滚动列表框
+; 15.在窗口下显示阴影
+; 16.在单击后淡出菜单
+; 17.在视图中淡入淡出或滑动工具条提示
+; 18.在鼠标指针下显示阴影
+"UserPreferencesMask"=hex:90,12,03,80,10,00,00,00;
+
 
 ;--------------------------------------------------------------------------------------------
 ; Disables UAC
@@ -204,8 +214,6 @@ Windows Registry Editor Version 5.00
 "HideIcons"=dword:00000000
 ; 对图片始终显示图标 1:只显示图标  0:显示缩略图
 "IconsOnly"=dword:00000000
-; 对于其他显示器上的任务栏，0:始终合并  1:在任务栏已满时合并  2:从不合并
-"MMTaskbarGlomLevel"=dword:00000000
 ; 在单独的进程打开文件夹窗口，1:是  0:否
 "SeparateProcess"=dword:00000000
 ; 用彩色显示加密或压缩的NTFS文件，1:彩色显示  0:否
@@ -224,16 +232,18 @@ Windows Registry Editor Version 5.00
 "StartShownOnUpgrade"=dword:00000001
 ; 任务栏动画，1:启用  0:禁用
 "TaskbarAnimations"=dword:00000000
-; 任务栏小组件按钮，1:显示  0:隐藏
-"TaskbarDa"=dword:00000000
-; 任务栏图标合并， 0:始终合并  1:占满后合并  2:从不合并
-"TaskbarGlomLevel"=dword:00000001
+; 合并任务栏按钮并隐藏标签， 0:始终合并  1:占满后合并  2:从不合并
+"TaskbarGlomLevel"=dword:00000000
+; 合并任务栏按钮并隐藏其他任务栏上的标签，0:始终合并  1:在任务栏已满时合并  2:从不合并
+"MMTaskbarGlomLevel"=dword:00000000
 ; 任务栏聊天图标，1:显示  0:不显示
 "TaskbarMn"=dword:00000000
 ; 锁定任务栏，1:不锁定 0:锁定
 "TaskbarSizeMove"=dword:00000001
 ; 任务栏图标大小，0:默认大任务栏按钮  1:小任务栏按钮
 "TaskbarSmallIcons"=dword:00000001
+; 任务栏小组件按钮，1:显示  0:隐藏 注：该项权限不足无法写入
+; "TaskbarDa"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 ; 任务栏搜索框状态，0:隐藏 1:仅搜索图标 2:搜索框 3:搜索图标和标签

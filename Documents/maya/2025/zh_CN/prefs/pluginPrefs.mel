@@ -2,7 +2,7 @@
 //
 //
 
-
+// 默认打开的插件
 evalDeferred("autoLoadPlugin(\"\", \"mayaHIK\", \"mayaHIK\")");
 evalDeferred("autoLoadPlugin(\"\", \"invertShape\", \"invertShape\")");
 evalDeferred("autoLoadPlugin(\"\", \"curveWarp\", \"curveWarp\")");
@@ -53,4 +53,10 @@ evalDeferred("autoLoadPlugin(\"\", \"matrixNodes\", \"matrixNodes\")");
 evalDeferred("autoLoadPlugin(\"\", \"pointOnMeshinfo\", \"pointOnMeshinfo\")");
 evalDeferred("autoLoadPlugin(\"\", \"closestPointOnCurve\", \"closestPointOnCurve\")");
 evalDeferred("autoLoadPlugin(\"\", \"bonusTools\", \"bonusTools\")");
+
+// 自动连接贴图
+evalDeferred("autoLoadPlugin(\"\", \"Substance\", \"Substance\")");
+evalDeferred("autoLoadPlugin(\"\", \"Substanceconnector\", \"Substanceconnector\")");
+evalDeferred("autoLoadPlugin(\"\", \"Substancemaya\", \"Substancemaya\")");
+evalDeferred("autoLoadPlugin(\"\", \"Substanceworkflow\", \"Substanceworkflow\")");
 
