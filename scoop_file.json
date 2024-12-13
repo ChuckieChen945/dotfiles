@@ -1,6 +1,11 @@
 {
     "apps": [
         {
+            "##": "scoo依赖git更新仓库，git需放第一个"
+            "Name": "git",
+            "Source": "main"
+        },
+        {
             "Name": "md24",
             "Source": "Chuckie_s"
         },
@@ -105,10 +110,6 @@
         {
             "Name": "everything",
             "Source": "extras"
-        },
-        {
-            "Name": "git",
-            "Source": "main"
         },
         {
             "##": "support unpacking InnoSetup files",
