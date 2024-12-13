@@ -277,3 +277,8 @@ Windows Registry Editor Version 5.00
 ; 将caps lock map 为 ctrl
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
 "Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00
+
+; windows powershell PageCode 改为 65110(0x 0000fde9)
+[HKEY_CURRENT_USER\Console\%SystemRoot%_system32_cmd.exe]
+"CodePage"=dword:0000fde9
+
