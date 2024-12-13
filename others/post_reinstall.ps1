@@ -26,8 +26,11 @@ foreach ($uri in $regFiles) {
 Stop-Process -Name explorer -Force; Start-Process explorer
 
 $specialFolders = @(
-    "$env:USERPROFILE\Downloads",
-    "$env:USERPROFILE\Desktop"
+    # "$env:USERPROFILE\Downloads",
+    # "$env:USERPROFILE\Desktop"
+    # Here, use absolute paths. Using $env:USERPROFILE can cause issues with redirection.
+    "C:\Users\Chuckie\Downloads",
+    "C:\Users\Chuckie\Desktop"
 )
 # Create a Shell.Application object
 $shell = New-Object -ComObject Shell.Application
@@ -64,8 +67,10 @@ foreach ($path in $BackupPaths) {
     Copy-Item -Path $tempPath -Destination (Split-Path $path -Parent) -Recurse -Force
 }
 
-Enable-WindowsOptionalFeature -FeatureName "VirtualMachinePlatform" -All -Online -NoRestart
-Enable-WindowsOptionalFeature -FeatureName "Microsoft-Windows-Subsystem-Linux" -All -Online -NoRestart
+# The LimitAccess parameter prevents access to Windows Update as a Source for restoring features to online images.
+# The All parameter enables all parent features of the specified feature before enabling the specified feature.
+Enable-WindowsOptionalFeature -FeatureName "VirtualMachinePlatform" -All -Online -NoRestart -LimitAccess
+Enable-WindowsOptionalFeature -FeatureName "Microsoft-Windows-Subsystem-Linux" -All -Online -NoRestart -LimitAccess
 
 scoop import "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
 
@@ -90,6 +95,7 @@ foreach ($path in $paths) {
     # $o.Namespace($path).Self.InvokeVerb("pintohome")
 }
 
+# FIXME:
 $SymbolicLink = "$env:USERPROFILE\scoop\apps\anki\current\data\163\collection.media"
 $TargetPath = "$env:USERPROFILE\scoop\apps\anki\current\data\qq\collection.media"
 # Create a symbolic link
@@ -105,6 +111,7 @@ New-Item -ItemType SymbolicLink -Path $SymbolicLink -Target $TargetPath -ErrorAc
 
 
 # Enable hibernation
+# FIXME:
 powercfg -h on
 
 # TODO: Sophia

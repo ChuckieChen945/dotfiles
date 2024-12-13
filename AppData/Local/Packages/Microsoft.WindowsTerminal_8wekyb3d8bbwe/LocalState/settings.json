@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
-    [
+    "actions": [
         {
-            "command":
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -18,8 +16,7 @@
             "keys": "ctrl+v"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -33,56 +30,42 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "powercfg -s e9a42b02-d5df-448d-aa00-03f14749eb61"
             },
             "name": "卓越性能"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "powercfg -s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"
             },
             "name": "高性能"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "powercfg -s 381b4222-f694-41f0-9685-ff5bb260df2e"
             },
             "name": "平衡"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "powercfg -s a1841308-3541-4fab-bc81-f71556f20b4a"
             },
             "name": "节能"
         },
         {
-            "command":
-            {
-                "action": "sendInput",
-                "input": "bbdown '' -q '1080p 高清/360p 流畅' --audio-ascending"
-            },
-            "name": "节能"
-        },
-        {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "bbdown '' -q '1080p 高清/360p 流畅' --audio-ascending"
             },
             "name": "bbdown download"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "edge-tts -t 'This is a test.' -v 'en-GB-LibbyNeural' --write-media 'test.mp3'"
             },
@@ -94,37 +77,31 @@
     "copyOnSelect": true,
     // 默认启动的终端 id
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "newTabMenu":
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             "colorScheme": "One Dark",
-            "font":
-            {
+            "font": {
                 "face": "CaskaydiaCove Nerd Font"
             },
             "opacity": 0,
             "useAcrylic": true
         },
-        "list":
-        [
+        "list": [
             {
-                "guid": "{fe66f4b8-350f-56bb-adb0-c2ce745f6db5}",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "name": "PowerShell (scoop)",
-                "startingDirectory": "D:\\Chuckie\\OneDrive\\Desktop",
+                "name": "PowerShell",
+                "startingDirectory": "D:\\zzz_test",
                 "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
-    "schemes":
-    [
+    "schemes": [
         // https://github.com/JumpJets/Windows-Terminal-One-Dark/?tab=readme-ov-file
         {
             "name": "One Dark",

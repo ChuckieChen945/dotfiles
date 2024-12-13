@@ -151,7 +151,8 @@
         },
         {
             "##": [
-                "the latest Microsoft Visual C++ Redistributable Packages 2015–2022 x64, AKA Microsoft Visual C++ runtime",
+                "the latest Microsoft Visual C++ Redistributable Packages 2015–2022 x64",
+                "AKA Microsoft Visual C++ runtime",
                 "starship 依赖"
             ],
             "Name": "vcredist-aio",
@@ -163,7 +164,7 @@
         },
         {
             "##": [
-                "powertoys 依赖 DotNet Desktop Runtime 6",
+                "powertoys,v2rayN 等依赖 DotNet Desktop Runtime 6",
                 "注意，是dot net runtime不是dotnet sdk(versions/dotnet6-sdk)"
             ],
             "Name": "windowsdesktop-runtime",
