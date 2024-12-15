@@ -4,27 +4,33 @@ Windows Registry Editor Version 5.00
 ; https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options
 
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions]
-"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; GitHub加速
-"alhnbdjjbokpmilgemopoomnldpejihb"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\alhnbdjjbokpmilgemopoomnldpejihb]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; keepassxc
-"pdffhmdngciaglkoonimfcmckehcpafo"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\pdffhmdngciaglkoonimfcmckehcpafo]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; tampermonkey TODO:在油猴插件中添加取消知乎固定导航栏的脚本，或用stylish插件
-"iikmkjmpaadaobahmlepeloendndfphd"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\iikmkjmpaadaobahmlepeloendndfphd]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; vimium-c-全键盘操作浏览器
-"aibcglbfblnogfjhbcmmpobjhnomhcdo"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\aibcglbfblnogfjhbcmmpobjhnomhcdo]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; i-dont-care-about-cookie
-"oholpbloipjbbhlhohaebmieiiieioal"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\oholpbloipjbbhlhohaebmieiiieioal]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; smart-toc
-"iaolkehclkpehgahmbpcjoilglcfffab"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\iaolkehclkpehgahmbpcjoilglcfffab]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; adblock-plus-免费的广告拦截器
-"gmgoamodcdcjnbaobigkjelfplakmdhh"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\gmgoamodcdcjnbaobigkjelfplakmdhh]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; Cookie-Editor
-"neaplmfkghagebokkhpjpoebhdledlfi"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\neaplmfkghagebokkhpjpoebhdledlfi]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; Stylish - Custom themes for any website
-"pibpbbbcgeakmkmhgnllkkjdgpoabdge"=""
-; Vimium C - 全键盘操作浏览器
-"aibcglbfblnogfjhbcmmpobjhnomhcdo"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\pibpbbbcgeakmkmhgnllkkjdgpoabdge]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 ; 篡改猴
-"iikmkjmpaadaobahmlepeloendndfphd"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Edge\Extensions\iikmkjmpaadaobahmlepeloendndfphd]
+"update_url"="https://edge.microsoft.com/extensionwebstorebase/v1/crx"
