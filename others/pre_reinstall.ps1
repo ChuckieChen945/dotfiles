@@ -8,8 +8,9 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 # 下载所有软件
 $response = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
 foreach ($app in $response.apps) {
-    $result = "$($app.Source)/$($app.Name)"
-    scoop download $result
+    foreach($depends in (scoop depends "$($app.Source)/$($app.Name)")) {
+        scoop download "$($depends.Source)/$($depends.Name)"
+    }
 }
 
 $DownloadFolder = "D:\Downloads"

@@ -4,6 +4,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 powercfg -s e9a42b02-d5df-448d-aa00-03f14749eb61
 # Windows PowerShell does not use UTF-8 encoding by default,
 # so it is necessary to use entirely English characters to avoid errors.
+# TODO: winget 安装 chezmoi，安装无线网卡驱动
+# https://dlcdnets.asus.com.cn/pub/ASUS/nb/Image/Driver/Networking/38490/WirelessLan_DCH_MediaTek_Z_V3.4.2.1046_38490.exe?model=M6501RM
+# https://www.asus.com.cn/laptops/for-home/vivobook/vivobook-pro-15x-oled-m6501-amd-ryzen-6000-series/helpdesk_download?model2Name=M6501RM
 
 # Disable Windows Defender, as the downloaded KMS tool might be detected as a virus
 Set-MpPreference -DisableRealtimeMonitoring $true
@@ -25,6 +28,8 @@ foreach ($uri in $regFiles) {
 }
 Stop-Process -Name explorer -Force; Start-Process explorer
 
+Write-Host 'importing registry done' -ForegroundColor Green
+
 $specialFolders = @(
     # "$env:USERPROFILE\Downloads",
     # "$env:USERPROFILE\Desktop"
@@ -42,6 +47,8 @@ foreach ($folderPath in $specialFolders) {
         $shell.NameSpace(10).MoveHere($folder)
     }
 }
+
+Write-Host 'deleting unused folders done' -ForegroundColor Green
 
 # TODO: Automatically update the hosts in the dotfile via GitHub user action https://github.com/Ruddernation-Designs/Adobe-URL-Block-List 
 # TODO: Right-click to create a new text file directly without other options
@@ -67,6 +74,14 @@ foreach ($path in $BackupPaths) {
     Copy-Item -Path $tempPath -Destination (Split-Path $path -Parent) -Recurse -Force
 }
 
+# FIXME:
+$SymbolicLink = "$env:USERPROFILE\scoop\apps\anki\current\data\163\collection.media"
+$TargetPath = "$env:USERPROFILE\scoop\apps\anki\current\data\qq\collection.media"
+# Create a symbolic link
+New-Item -ItemType SymbolicLink -Path $SymbolicLink -Target $TargetPath -ErrorAction SilentlyContinue
+
+Write-Host 'restoring data done' -ForegroundColor Green
+
 # The LimitAccess parameter prevents access to Windows Update as a Source for restoring features to online images.
 # The All parameter enables all parent features of the specified feature before enabling the specified feature.
 Enable-WindowsOptionalFeature -FeatureName "VirtualMachinePlatform" -All -Online -NoRestart -LimitAccess
@@ -74,9 +89,12 @@ Enable-WindowsOptionalFeature -FeatureName "Microsoft-Windows-Subsystem-Linux" -
 
 scoop import "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
 
+Write-Host 'importing scoop file done' -ForegroundColor Green
+
 chezmoi init --apply --force ChuckieChen945
 
-# reload profile file
+Write-Host 'initing chezmoi done' -ForegroundColor Green
+
 & $PROFILE
 $paths = @(
     "$env:USERPROFILE\.local\share\chezmoi",
@@ -95,11 +113,8 @@ foreach ($path in $paths) {
     # $o.Namespace($path).Self.InvokeVerb("pintohome")
 }
 
-# FIXME:
-$SymbolicLink = "$env:USERPROFILE\scoop\apps\anki\current\data\163\collection.media"
-$TargetPath = "$env:USERPROFILE\scoop\apps\anki\current\data\qq\collection.media"
-# Create a symbolic link
-New-Item -ItemType SymbolicLink -Path $SymbolicLink -Target $TargetPath -ErrorAction SilentlyContinue
+Write-Host 'setting zoxide done' -ForegroundColor Green
+
 
 # TODO: Move hosts
 
