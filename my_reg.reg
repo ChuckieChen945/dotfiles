@@ -1,38 +1,38 @@
 Windows Registry Editor Version 5.00
 
 ;--------------------------------------------------------------------------------------------
+; 桌面背景全黑
+[HKEY_CURRENT_USER\Control Panel\Colors]
+"Background"="0 0 0"
+
+;--------------------------------------------------------------------------------------------
+; 主题色
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
+"ColorizationColor"=dword:c4515c6b
+"ColorizationAfterglow"=dword:c4515c6b
+
+;--------------------------------------------------------------------------------------------
 ;   使win11使用旧版windows菜单
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
 @=""
 
+
 ;--------------------------------------------------------------------------------------------
 ;   重定向用户文件夹
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders]
+"Desktop"="D:\\Chuckie\\OneDrive\\Desktop"
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders]
 ;   Downloads folder
 "{374DE290-123F-4565-9164-39C4925E467B}"="D:\\Downloads"
 "{7D83EE9B-2244-4E70-B1F5-5393042AF1E4}"="D:\\Downloads"
 ;   OneDrive folder
-"{24D89E24-2F19-4534-9DDE-6A6671FBB8FE}"="D:\Chuckie\OneDrive\Documents"
-"{339719B5-8C47-4894-94C2-D8F77ADD44A6}"="D:\Chuckie\OneDrive\Pictures"
-"{A52BBA46-E9E1-435F-B3D9-28DAA648C0F6}"="D:\Chuckie\OneDrive"
+"{24D89E24-2F19-4534-9DDE-6A6671FBB8FE}"="D:\\Chuckie\\OneDrive\\Documents"
+"{339719B5-8C47-4894-94C2-D8F77ADD44A6}"="D:\\Chuckie\\OneDrive\\Pictures"
+"{A52BBA46-E9E1-435F-B3D9-28DAA648C0F6}"="D:\\Chuckie\\OneDrive"
 ;   Desktop
-"{754AC886-DF64-4CBA-86B5-F7FBF4FBCEF5}"="D:\Chuckie\OneDrive\Desktop"
-"Desktop"="D:\Chuckie\OneDrive\Desktop"
-
-;--------------------------------------------------------------------------------------------
-;   隐藏开始菜单中“推荐的项目”
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"HideRecommendedSection"=dword:00000001
-
-;--------------------------------------------------------------------------------------------
-;   开始菜单 > 更多固定项
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"Start_Layout"=dword:00000001
-
-;--------------------------------------------------------------------------------------------
-; Disables the lockscreen 直接跳过锁屏，进入登录或桌面界面。
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\SessionData]
-"AllowLockScreen"=dword:00000000
+"{754AC886-DF64-4CBA-86B5-F7FBF4FBCEF5}"="D:\\Chuckie\\OneDrive\\Desktop"
+"Desktop"="D:\\Chuckie\\OneDrive\\Desktop"
 
 ;--------------------------------------------------------------------------------------------
 ; enabled LongPaths support
@@ -40,67 +40,11 @@ Windows Registry Editor Version 5.00
 "LongPathsEnabled"=dword:00000001
 
 ;--------------------------------------------------------------------------------------------
-; Associate files with no extension to VSCode
-[HKEY_CLASSES_ROOT\.]
-[HKEY_CLASSES_ROOT\.\shell]
-[HKEY_CLASSES_ROOT\.\shell\open]
-[HKEY_CLASSES_ROOT\.\shell\open\command]
-@="\"%USERPROFILE%\\Scoop\\apps\\vscode\\current\\Code.exe\" \"%1\""
-
-;--------------------------------------------------------------------------------------------
-; Enable Apps Dark Mode
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+; Enable Apps Dark Mode
 "AppsUseLightTheme"=dword:00000000
 ; Enable System Dark Mode
 "SystemUsesLightTheme"=dword:00000000
-
-;--------------------------------------------------------------------------------------------
-; 显示 所有系统托盘图标
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-"EnableAutoTray"=-
-
-;--------------------------------------------------------------------------------------------
-; open file location in new window
-; https://github.com/DKCTC/windows-explorer-open-file-background-location
-; TODO: 将其通过scoop安装
-[HKEY_CLASSES_ROOT\*\shell\1openloc]
-@="Open file location in new window"
-"Icon"="%windir%\\System32\\shell32.dll,3"
-[HKEY_CLASSES_ROOT\*\shell\1openloc\command]
-@="explorer.exe /select,\"%1\""
-[HKEY_CLASSES_ROOT\Directory\Background\shell\1openloc]
-@="Open this folder in new window"
-"Icon"="%windir%\\System32\\shell32.dll,3"
-[HKEY_CLASSES_ROOT\Directory\Background\shell\1openloc\command]
-@="explorer.exe \"%V\""
-
-;--------------------------------------------------------------------------------------------
-; view certain file types as .txt in windows file explorer
-; https://gist.github.com/davebrny/d88e0f79e7ac3630b66e4cc4f7c73bd2
-; TODO: 添加更多文件，将其通过scoop安装
-[HKEY_CLASSES_ROOT\.ahk]
-"PerceivedType"="text"
-[HKEY_CLASSES_ROOT\.md]
-"PerceivedType"="text"
-[HKEY_CLASSES_ROOT\.menu]
-"PerceivedType"="text"
-[HKEY_CLASSES_ROOT\.note]
-"PerceivedType"="text"
-[HKEY_CLASSES_ROOT\.sublime-snippet]
-"PerceivedType"="text"
-
-;--------------------------------------------------------------------------------------------
-; Windows Media Player Skip EULA + First Time usage dialog
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Preferences]
-"AcceptedEULA"=dword:00000001
-"FirstTime"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
-"GroupPrivacyAcceptance"=dword:00000001
-
-;--------------------------------------------------------------------------------------------
-;Allow Windows Updates for other products (e.g. Microsoft Office)
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\WindowsUpdate\Services\7971f918-a847-4430-9279-4a52d1efe18d]
-"RegisteredWithAU"=dword:00000001
 
 ;--------------------------------------------------------------------------------------------
 ;Remove windows store taskbar
@@ -108,25 +52,20 @@ Windows Registry Editor Version 5.00
 "NoPinningStoreToTaskbar"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "NoPinningStoreToTaskbar"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; 任务栏左对齐
+"TaskbarAl"=dword:00000000
+; Removes Widgets from the Taskbar 只能手动更改
+; "TaskbarMn"=dword:00000000
+; Removes Chat from the Taskbar 只能手动更改
+; "TaskbarDa"=dword:00000000
 
 ;--------------------------------------------------------------------------------------------
-;Keep NUMLock always on
-[HKEY_CURRENT_USER\Control Panel\Keyboard]
-"InitialKeyboardIndicators"="2"
-
-;--------------------------------------------------------------------------------------------
-; Add_Open_Location_context_menu
-; 为多个文件类型和系统对象（如符号链接、快捷方式、最近文档、搜索结果等）添加 "打开包含文件夹" 选项，允许用户通过右键点击快速打开文件所在的文件夹。
-[HKEY_CLASSES_ROOT\.symlink\shellex\ContextMenuHandlers\OpenContainingFolderMenu]
-@="{37ea3a21-7493-4208-a011-7f9ea79ce9f5}"
-[HKEY_CLASSES_ROOT\LibraryLocation\ShellEx\ContextMenuHandlers\OpenContainingFolderMenu]
-@="{37ea3a21-7493-4208-a011-7f9ea79ce9f5}"
-[HKEY_CLASSES_ROOT\lnkfile\shellex\ContextMenuHandlers\OpenContainingFolderMenu]
-@="{37ea3a21-7493-4208-a011-7f9ea79ce9f5}"
-[HKEY_CLASSES_ROOT\RecentDocument\ShellEx\ContextMenuHandlers\OpenContainingFolderMenu]
-@="{37ea3a21-7493-4208-a011-7f9ea79ce9f5}"
-[HKEY_CLASSES_ROOT\Results\ShellEx\ContextMenuHandlers\OpenContainingFolderMenu]
-@="{37ea3a21-7493-4208-a011-7f9ea79ce9f5}"
+; 自动隐藏任务栏
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3]
+"Settings"=hex:30,00,00,00,fe,ff,ff,ff,03,00,00,00,03,00,00,00,60,00,00,00,60,\
+  00,00,00,00,00,00,00,f4,05,00,00,40,0b,00,00,54,06,00,00,c0,00,00,00,01,00,\
+  00,00
 
 
 ;--------------------------------------------------------------------------------------------
@@ -134,12 +73,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel]
 "AllItemsIconView"=dword:00000002
 "StartupPage"=dword:00000001
-
-;--------------------------------------------------------------------------------------------
-; Fix Slow-Loading Windows Icons by Increasing the Icon Cache
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
-"Max Cached Icons"="4096"
-
 
 ;--------------------------------------------------------------------------------------------
 ;   性能选项
@@ -183,19 +116,7 @@ Windows Registry Editor Version 5.00
 "ConsentPromptBehaviorAdmin"=dword:00000000
 "ConsentPromptBehaviorUser"=dword:00000000
 
-
 ;--------------------------------------------------------------------------------------------
-; 在设备管理器中显示设备的详细信息。DEVMGR_SHOW_DETAILS=1 启用详细信息。
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
-"DEVMGR_SHOW_DETAILS"=dword:00000001
-
-
-;--------------------------------------------------------------------------------------------
-
-; 在文件资源管理器窗口的标题栏中显示完整路径。
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
-"FullPath"=dword:00000001
-
 ;   文件资源管理器选项
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ; 显示隐藏的文件、文件夹和驱动器。 1:显示隐藏的文件  2:不显示
@@ -281,4 +202,3 @@ Windows Registry Editor Version 5.00
 ; windows powershell PageCode 改为 65110(0x 0000fde9)
 [HKEY_CURRENT_USER\Console]
 "CodePage"=dword:0000fde9
-
