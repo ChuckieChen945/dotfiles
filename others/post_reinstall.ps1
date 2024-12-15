@@ -1,7 +1,7 @@
 #Requires -RunAsAdministrator
 # TODO:auto run using chezmoi
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-powercfg -s e9a42b02-d5df-448d-aa00-03f14749eb61
+powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa >nul 2>&1 && powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 # Windows PowerShell does not use UTF-8 encoding by default,
 # so it is necessary to use entirely English characters to avoid errors.
 # TODO: winget 安装 chezmoi，安装无线网卡驱动
@@ -12,6 +12,9 @@ powercfg -s e9a42b02-d5df-448d-aa00-03f14749eb61
 Set-MpPreference -DisableRealtimeMonitoring $true
 Add-MpPreference -ExclusionPath 'D:\Downloads\scoop_cache'
 Add-MpPreference -ExclusionPath "$env:USERPROFILE\scoop"
+
+$env:HTTP_PROXY = "http://127.0.0.1:10809"
+$env:HTTPS_PROXY = "http://127.0.0.1:10809"
 
 # Modify the registry, which includes actions like disabling UAC, which should be done before installing software
 $regFiles = @(
@@ -30,31 +33,14 @@ Stop-Process -Name explorer -Force; Start-Process explorer
 
 Write-Host 'importing registry done' -ForegroundColor Green
 
-$specialFolders = @(
-    # "$env:USERPROFILE\Downloads",
-    # "$env:USERPROFILE\Desktop"
-    # Here, use absolute paths. Using $env:USERPROFILE can cause issues with redirection.
-    "C:\Users\Chuckie\Downloads",
-    "C:\Users\Chuckie\Desktop"
-)
-# Create a Shell.Application object
-$shell = New-Object -ComObject Shell.Application
-# Move to the Recycle Bin
-foreach ($folderPath in $specialFolders) {
-    if (Test-Path $folderPath) {
-        # Get the folder Shell object
-        $folder = $shell.Namespace((Get-Item $folderPath).Parent.FullName).ParseName((Get-Item $folderPath).Name)
-        $shell.NameSpace(10).MoveHere($folder)
-    }
-}
-
-Write-Host 'deleting unused folders done' -ForegroundColor Green
-
 # TODO: Automatically update the hosts in the dotfile via GitHub user action https://github.com/Ruddernation-Designs/Adobe-URL-Block-List 
 # TODO: Right-click to create a new text file directly without other options
 
 # Install Scoop with administrator privileges
-Invoke-Expression "& {$(Invoke-RestMethod 'https://get.scoop.sh')} -RunAsAdmin"
+try {
+    Invoke-Expression "& {$(Invoke-RestMethod 'https://get.scoop.sh')} -RunAsAdmin"
+}
+catch {}
 
 $BackupPaths = @(
     # "V2RayN configuration"
@@ -187,7 +173,7 @@ powercfg -h on
 
 # Enable Windows Defender
 Set-MpPreference -DisableRealtimeMonitoring $false
-powercfg -s 381b4222-f694-41f0-9685-ff5bb260df2e
+powercfg /duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e cccccccc-cccc-cccc-cccc-cccccccccccc >nul 2>&1 && powercfg /setactive cccccccc-cccc-cccc-cccc-cccccccccccc
 
 Write-Host "All done. "
 Write-Host "The following items need to be done manually:"
