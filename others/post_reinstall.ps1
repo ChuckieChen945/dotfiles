@@ -111,10 +111,6 @@ Write-Host 'setting zoxide done' -ForegroundColor Green
 # TODO: Set the address bar to zhihu.com
 
 
-# Enable hibernation
-# FIXME:
-powercfg -h on
-
 # TODO: Sophia
 # * [ ] Regularly automatically download the latest version of win10 images, common software installation packages, universal driver assistants, etc., and store them in a specified directory on the hard disk for backup
 #       https://github.com/bin456789/reinstall
