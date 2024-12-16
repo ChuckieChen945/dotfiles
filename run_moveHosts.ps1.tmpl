@@ -1,0 +1,8 @@
+
+#Requires -RunAsAdministrator
+
+$HOSTS_FILE_PATH = 'C:\Windows\System32\drivers\etc\hosts'
+
+# Ensure the script is running on Windows and move the hosts file
+Copy-Item "{{ .chezmoi.sourceDir }}/hosts" $HOSTS_FILE_PATH -Force
+Write-Host "Moved hosts file to $HOSTS_FILE_PATH"
