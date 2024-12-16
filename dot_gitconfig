@@ -7,7 +7,7 @@
 	email = chuckie_chen945@qq.com
 [core]
 	editor = code --wait
-	pager = 
+	pager =
 [diff]
     tool = default-difftool
 [difftool "default-difftool"]
