@@ -109,8 +109,11 @@ Windows Registry Editor Version 5.00
 
 ;--------------------------------------------------------------------------------------------
 ; Disables UAC
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
-"EnableLUA"=dword:00000000
+; 注：通过注册表禁用UAC时，会引起7zip右键菜单失效。
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+;"ConsentPromptBehaviorAdmin"=dword:00000000
+;"EnableLUA"=dword:00000000
+;"PromptOnSecureDesktop"=dword:00000000
 ; 需要管理员权限时直接提权，无需弹窗确认
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "ConsentPromptBehaviorAdmin"=dword:00000000
@@ -202,3 +205,21 @@ Windows Registry Editor Version 5.00
 ; windows powershell PageCode 改为 65110(0x 0000fde9)
 [HKEY_CURRENT_USER\Console]
 "CodePage"=dword:0000fde9
+
+
+;关闭"小组件"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh]
+"AllowNewsAndInterests"=dword:00000000
+
+;隐藏"Teams"图标
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Chat]
+"ChatIcon"=dword:00000003
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;隐藏“任务视图”图标
+"ShowTaskViewButton"=dword:00000000
+
+;隐藏任务栏“搜索”图标
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
+
