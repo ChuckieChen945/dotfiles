@@ -11,6 +11,7 @@ powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaa
 # Disable Windows Defender, as the downloaded KMS tool might be detected as a virus
 Set-MpPreference -DisableRealtimeMonitoring $true
 Add-MpPreference -ExclusionPath 'D:\Downloads\scoop_cache'
+Add-MpPreference -ExclusionPath 'C:\ProgramData\scoop'
 Add-MpPreference -ExclusionPath "$env:USERPROFILE\scoop"
 
 $env:HTTP_PROXY = "http://127.0.0.1:10809"
