@@ -1,5 +1,4 @@
 #Requires -RunAsAdministrator
-# TODO:auto run using chezmoi
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa >nul 2>&1 && powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 # Windows PowerShell does not use UTF-8 encoding by default,
@@ -7,6 +6,9 @@ powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaa
 # TODO: winget install chezmoi，install wireless driver
 # https://dlcdnets.asus.com.cn/pub/ASUS/nb/Image/Driver/Networking/38490/WirelessLan_DCH_MediaTek_Z_V3.4.2.1046_38490.exe?model=M6501RM
 # https://www.asus.com.cn/laptops/for-home/vivobook/vivobook-pro-15x-oled-m6501-amd-ryzen-6000-series/helpdesk_download?model2Name=M6501RM
+# TODO: git foler ownership problem
+# TODO: adobe hosts problem
+# https://github.com/ignaciocastro/a-dove-is-dumb
 
 # Disable Windows Defender, as the downloaded KMS tool might be detected as a virus
 Set-MpPreference -DisableRealtimeMonitoring $true
