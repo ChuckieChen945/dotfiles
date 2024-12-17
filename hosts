@@ -305,7 +305,7 @@
 127.0.0.1 api.clo3d-china.com
 127.0.0.1 *.clo-set.com
 
-
+# https://a.dove.isdumb.one/pihole.txt
 # These IPs will only block the telemetry check of Adobe apps,
 # and shouldn't interfere with any other network option,
 # such as AI generation, downloads, etc.
