@@ -16,19 +16,19 @@ foreach ($app in $response.apps) {
 $DownloadFolder = "D:\Downloads"
 $BackupPaths = @(
     # "V2RayN配置"
-    "$env:USERPROFILE\scoop\persist\v2rayn\guiConfigs",
+    "$env:USERPROFILE\scoop\persist\v2rayn\guiConfigs\",
     # "GitHub密钥"
-    "$env:USERPROFILE\.ssh",
+    "$env:USERPROFILE\.ssh\",
     # "Anki数据"
     "$env:USERPROFILE\scoop\persist\anki\data\",
     # "Scoop Buckets"
-    "$env:USERPROFILE\scoop\buckets",
+    "$env:USERPROFILE\scoop\buckets\",
     # "VSCode插件"
-    "$env:USERPROFILE\scoop\persist\vscode\data\extensions"
+    "$env:USERPROFILE\scoop\persist\vscode\data\extensions\"
 )
 
-foreach ($path in $BackupPaths) {
-    Copy-Item -Path $path -Destination "$DownloadFolder\reinstall_backup\" -Recurse -Force
-}
+# foreach ($path in $BackupPaths) {
+#     Copy-Item -Path $path -Destination "$DownloadFolder\reinstall_backup\" -Recurse -Force
+# }
 
 Write-Host "All done."
