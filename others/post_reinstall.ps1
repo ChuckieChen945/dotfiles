@@ -1,6 +1,7 @@
 #Requires -RunAsAdministrator
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa >nul 2>&1 && powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa >nul 2>&1
+powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 # Windows PowerShell does not use UTF-8 encoding by default,
 # so it is necessary to use entirely English characters to avoid errors.
 # TODO: winget install chezmoi，install wireless driver
@@ -71,10 +72,6 @@ New-Item -ItemType SymbolicLink -Path $SymbolicLink -Target $TargetPath -ErrorAc
 
 Write-Host 'restoring data done' -ForegroundColor Green
 
-# The LimitAccess parameter prevents access to Windows Update as a Source for restoring features to online images.
-# The All parameter enables all parent features of the specified feature before enabling the specified feature.
-Enable-WindowsOptionalFeature -FeatureName "VirtualMachinePlatform" -All -Online -NoRestart -LimitAccess
-Enable-WindowsOptionalFeature -FeatureName "Microsoft-Windows-Subsystem-Linux" -All -Online -NoRestart -LimitAccess
 
 scoop import "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
 
@@ -169,7 +166,8 @@ Write-Host 'setting zoxide done' -ForegroundColor Green
 
 # Enable Windows Defender
 Set-MpPreference -DisableRealtimeMonitoring $false
-powercfg /duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e cccccccc-cccc-cccc-cccc-cccccccccccc >nul 2>&1 && powercfg /setactive cccccccc-cccc-cccc-cccc-cccccccccccc
+powercfg /duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e cccccccc-cccc-cccc-cccc-cccccccccccc >nul 2>&1
+powercfg /setactive cccccccc-cccc-cccc-cccc-cccccccccccc
 
 Write-Host "All done. "
 Write-Host "The following items need to be done manually:"

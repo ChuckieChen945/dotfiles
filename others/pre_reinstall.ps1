@@ -13,6 +13,8 @@ foreach ($app in $response.apps) {
     }
 }
 
+scoop download anderlli0053_DEV-tools/v2rayn-with-core-selfcontained
+
 $DownloadFolder = "D:\Downloads"
 $BackupPaths = @(
     # "V2RayN配置"

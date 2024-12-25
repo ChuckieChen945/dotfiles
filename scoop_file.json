@@ -46,6 +46,10 @@
             "Source": "Chuckie_s"
         },
         {
+            "Name": "microsoft-wsl",
+            "Source": "Chuckie_s"
+        },
+        {
             "Name": "7zip_with_context_menu",
             "Source": "Chuckie_s"
         },
@@ -188,7 +192,7 @@
             "Source": "main"
         },
         {
-            "##":"zoxide的zi命令需要",
+            "##": "zoxide的zi命令需要",
             "Name": "fzf",
             "Source": "main"
         },
@@ -199,6 +203,11 @@
         {
             "Name": "CascadiaCode-NF",
             "Source": "nerd-fonts"
+        },
+        {
+            "##":"microsoft-wsl需要先于archwsl安装",
+            "Name": "microsoft-wsl",
+            "Source": "Chuckie_s"
         },
         {
             "Name": "archwsl",
