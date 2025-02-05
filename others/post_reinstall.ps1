@@ -16,8 +16,8 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 Add-MpPreference -ExclusionPath 'D:\scoop\'
 Add-MpPreference -ExclusionPath 'C:\ProgramData\scoop'
 
-$env:HTTP_PROXY = "http://127.0.0.1:10809"
-$env:HTTPS_PROXY = "http://127.0.0.1:10809"
+$env:HTTP_PROXY = "http://127.0.0.1:10808"
+$env:HTTPS_PROXY = "http://127.0.0.1:10808"
 
 # Modify the registry, which includes actions like disabling UAC, which should be done before installing software
 function Import-registry {
