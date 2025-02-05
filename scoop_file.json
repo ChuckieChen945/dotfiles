@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "##": "scoo依赖git更新仓库，git需放第一个",
+            "##": "scoop依赖git更新仓库，git需放第一个",
             "Name": "git",
             "Source": "main"
         },
