@@ -10,10 +10,6 @@
             "Source": "Chuckie_s"
         },
         {
-            "Name": "my25",
-            "Source": "Chuckie_s"
-        },
-        {
             "Name": "zentools",
             "Source": "Chuckie_s"
         },
@@ -62,6 +58,10 @@
             "Source": "Chuckie_s"
         },
         {
+            "Name": "anki_with_extensions",
+            "Source": "Chuckie_s"
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster"
         },
@@ -101,10 +101,6 @@
         {
             "Name": "pureref",
             "Source": "anderlli0053_DEV-tools"
-        },
-        {
-            "Name": "anki",
-            "Source": "extras"
         },
         {
             "##": "为scoop启用aria2加速",
@@ -205,7 +201,7 @@
             "Source": "nerd-fonts"
         },
         {
-            "##":"microsoft-wsl需要先于archwsl安装",
+            "##": "microsoft-wsl需要先于archwsl安装",
             "Name": "microsoft-wsl",
             "Source": "Chuckie_s"
         },
@@ -250,6 +246,6 @@
     ],
     "config": {
         "proxy": "127.0.0.1:10809",
-        "cache_path": "D:\\Downloads\\scoop_cache\\"
+        "root_path": "D:\\scoop\\"
     }
 }

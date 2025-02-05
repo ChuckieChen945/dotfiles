@@ -13,93 +13,112 @@ powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 
 # Disable Windows Defender, as the downloaded KMS tool might be detected as a virus
 Set-MpPreference -DisableRealtimeMonitoring $true
-Add-MpPreference -ExclusionPath 'D:\Downloads\scoop_cache'
+Add-MpPreference -ExclusionPath 'D:\scoop\'
 Add-MpPreference -ExclusionPath 'C:\ProgramData\scoop'
-Add-MpPreference -ExclusionPath "$env:USERPROFILE\scoop"
 
 $env:HTTP_PROXY = "http://127.0.0.1:10809"
 $env:HTTPS_PROXY = "http://127.0.0.1:10809"
 
 # Modify the registry, which includes actions like disabling UAC, which should be done before installing software
-$regFiles = @(
-    "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/my_reg.reg",
-    "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/my_reg_edge_extensions.reg"
-)
-foreach ($uri in $regFiles) {
-    $tempFile = Join-Path $env:Temp (Split-Path $uri -Leaf)
-    # Download the registry file
-    Invoke-WebRequest -Uri $uri -OutFile $tempFile
-    # Import the registry file
-    reg import $tempFile
-    Remove-Item $tempFile
+function Import-registry {
+    $regFiles = @(
+        "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/my_reg.reg",
+        "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/my_reg_edge_extensions.reg"
+    )
+    foreach ($uri in $regFiles) {
+        $tempFile = Join-Path $env:Temp (Split-Path $uri -Leaf)
+        # Download the registry file
+        Invoke-WebRequest -Uri $uri -OutFile $tempFile
+        # Import the registry file
+        reg import $tempFile
+        Remove-Item $tempFile
+    }
+    Stop-Process -Name explorer -Force; Start-Process explorer
+    Write-Host 'importing registry done' -ForegroundColor Green
 }
-Stop-Process -Name explorer -Force; Start-Process explorer
-
-Write-Host 'importing registry done' -ForegroundColor Green
-
-# TODO: Automatically update the hosts in the dotfile via GitHub user action https://github.com/Ruddernation-Designs/Adobe-URL-Block-List 
-# TODO: Right-click to create a new text file directly without other options
 
 # Install Scoop with administrator privileges
-try {
-    Invoke-Expression "& {$(Invoke-RestMethod 'https://get.scoop.sh')} -RunAsAdmin"
-}
-catch {}
+function Install-Scoop {
+    try {
+        Invoke-Expression "& {$(Invoke-RestMethod 'https://get.scoop.sh')} -RunAsAdmin -ScoopDir 'D:\scoop\'"
+    }
+    catch {}
 
-$BackupPaths = @(
-    # "V2RayN configuration"
-    "$env:USERPROFILE\scoop\persist\v2rayn\guiConfigs\",
-    # "GitHub keys"
-    "$env:USERPROFILE\.ssh\",
-    # "Anki data"
-    "$env:USERPROFILE\scoop\persist\anki\data\",
-    # "Scoop Buckets"
-    "$env:USERPROFILE\scoop\buckets\",
-    # "VSCode extensions"
-    "$env:USERPROFILE\scoop\persist\vscode\data\extensions\"
-)
-# Restore
-foreach ($path in $BackupPaths) {
-    $tempPath = Join-Path "D:\Downloads\reinstall_backup" (Split-Path $path -Leaf)
-    Copy-Item -Path $tempPath -Destination (Split-Path $path -Parent) -Recurse -Force
+    $response = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
+    foreach ($app in $response.apps) {
+        Start-Job { scoop install $app }
+    }
+    Wait-Job *
+
+    # get all output
+    Get-Job | ForEach-Object { Receive-Job -Id $_.Id }
+
+    # import scoop config
+    scoop import "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
+
+    Write-Host 'importing scoop file done' -ForegroundColor Green
 }
 
-# FIXME:
-$SymbolicLink = "$env:USERPROFILE\scoop\apps\anki\current\data\163\collection.media"
-$TargetPath = "$env:USERPROFILE\scoop\apps\anki\current\data\qq\collection.media"
-# Create a symbolic link
-New-Item -ItemType SymbolicLink -Path $SymbolicLink -Target $TargetPath -ErrorAction SilentlyContinue
-
-Write-Host 'restoring data done' -ForegroundColor Green
-
-
-scoop import "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
-
-Write-Host 'importing scoop file done' -ForegroundColor Green
-
-chezmoi init --apply --force ChuckieChen945
-
-Write-Host 'initing chezmoi done' -ForegroundColor Green
-
-& $PROFILE
-$paths = @(
-    "$env:USERPROFILE\.local\share\chezmoi",
-    "$env:USERPROFILE\scoop\apps",
-    "$env:USERPROFILE\scoop\persist",
-    "$env:USERPROFILE\scoop\persist\anki\data"
-    "D:\zzz_test",
-    "D:\Chuckie\OneDrive\Desktop",
-    "D:\Downloads\",
-    "D:\Downloads\scoop_cache"
-)
-$o = new-object -com shell.application
-foreach ($path in $paths) {
-    z add $path | Out-Null
-    # FIXME: This operation cannot be performed
-    # $o.Namespace($path).Self.InvokeVerb("pintohome")
+function Restore-Data {
+    $BackupPaths = @(
+        # "V2RayN configuration"
+        # "$env:USERPROFILE\scoop\persist\v2rayn\guiConfigs\",
+        # "GitHub keys"
+        "$env:USERPROFILE\.ssh\"
+        # "Anki data"
+        # "$env:USERPROFILE\scoop\persist\anki\data\",
+        # "Scoop Buckets"
+        # "$env:USERPROFILE\scoop\buckets\",
+        # "VSCode extensions"
+        # "$env:USERPROFILE\scoop\persist\vscode\data\extensions\"
+    )
+    # Restore
+    foreach ($path in $BackupPaths) {
+        $tempPath = Join-Path "D:\Downloads\reinstall_backup" (Split-Path $path -Leaf)
+        Copy-Item -Path $tempPath -Destination (Split-Path $path -Parent) -Recurse -Force
+    }
 }
 
-Write-Host 'setting zoxide done' -ForegroundColor Green
+function Set-Chezmoi {
+    chezmoi init --apply --force ChuckieChen945
+    & $PROFILE
+    Write-Host 'initing chezmoi done' -ForegroundColor Green
+}
+
+function Set-Zoxide {
+    $paths = @(
+        "$env:USERPROFILE\.local\share\chezmoi",
+        "D:\scoop\apps",
+        "D:\scoop\persist",
+        "D:\scoop\persist\anki\data"
+        "D:\scoop\cache"
+        "E:\zzz_test",
+        "E:\Chuckie\OneDrive\Desktop",
+        "D:\Downloads\"
+    )
+    $o = new-object -com shell.application
+    foreach ($path in $paths) {
+        z add $path | Out-Null
+        # FIXME: This operation cannot be performed
+        # $o.Namespace($path).Self.InvokeVerb("pintohome")
+    }
+    Write-Host 'setting zoxide done' -ForegroundColor Green
+}
+
+Import-registry
+
+Install-Scoop
+
+Restore-Data
+
+Set-Chezmoi
+
+Set-Zoxide
+
+
+# TODO: Automatically update the hosts in the dotfile via GitHub user action https://github.com/Ruddernation-Designs/Adobe-URL-Block-List
+# TODO: Right-click to create a new text file directly without other options
+
 
 # TODO: Keep the browser running in the background for quick startup
 # * [ ] Automatically manage the list of websites compatible with the IE browser, manage the list of trusted sites, open websites with Edge browser using IE compatibility mode, see the various steps in the "Settings Guide" on the China Patent Electronic Application website and the settings of various online banks
