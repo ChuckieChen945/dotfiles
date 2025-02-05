@@ -10,7 +10,7 @@
     "useAcrylicInTabRow": true,
     "compatibility.allowHeadless": true,
     "compatibility.enableUnfocusedAcrylic": true,
-    "autoHideWindow": true,
+    // "autoHideWindow": true,
     "focusFollowMouse": true,
     "snapOnInput": true,
     "historySize": 32767,
