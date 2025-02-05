@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa >nul 2>&1
+powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa *> $null
 powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 # Windows PowerShell does not use UTF-8 encoding by default,
 # so it is necessary to use entirely English characters to avoid errors.
@@ -45,8 +45,11 @@ function Install-Scoop {
     catch {}
 
     $response = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
+    foreach($bucket in $response.buckets){
+        scoop bucket add $bucket.Name $bucket.Source
+    }
     foreach ($app in $response.apps) {
-        Start-Job { scoop install $app }
+        Start-Job { scoop install "$($app.Source)/$($app.Name)" }
     }
     Wait-Job *
 
@@ -185,7 +188,7 @@ Set-Zoxide
 
 # Enable Windows Defender
 Set-MpPreference -DisableRealtimeMonitoring $false
-powercfg /duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e cccccccc-cccc-cccc-cccc-cccccccccccc >nul 2>&1
+powercfg /duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e cccccccc-cccc-cccc-cccc-cccccccccccc *> $null
 powercfg /setactive cccccccc-cccc-cccc-cccc-cccccccccccc
 
 Write-Host "All done. "
