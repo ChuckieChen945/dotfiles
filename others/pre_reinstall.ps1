@@ -23,10 +23,13 @@ $nonPortables = @(
     "ps",
     "sp",
     "zb",
-    "zentools"
+    "zentools",
+    "baidunetdisk"
 )
 foreach ($nonPortable in $nonPortables) {
-    Remove-Item $(scoop prefix $nonPortable) -Force -ErrorAction SilentlyContinue -Recurse
+    $path = scoop prefix $nonPortable
+    $parentPath = Split-Path -Path $path -Parent
+    Remove-Item -Path $parentPath -Force -ErrorAction SilentlyContinue -Recurse
 }
 
 scoop download anderlli0053_DEV-tools/v2rayn-with-core-selfcontained
