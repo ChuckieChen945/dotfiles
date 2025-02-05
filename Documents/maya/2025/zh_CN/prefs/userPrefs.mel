@@ -5,7 +5,7 @@
 optionVar -cat "Bonus Tools" -iv "bonusToolsAcceptedEULA" 1;
 
 // 开启ZenTools
-python("import zen");
+python("import zentools");
 evalDeferred("zenTools");
 
 //
