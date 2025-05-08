@@ -41,15 +41,23 @@ function Import-registry {
 function Install-Scoop {
     try {
         Invoke-Expression "& {$(Invoke-RestMethod 'https://get.scoop.sh')} -RunAsAdmin -ScoopDir 'D:\scoop\'"
-    }
-    catch {}
+    } catch {}
+    . $PROFILE
 
+    # Git is required for buckets
+    scoop install "main/git"
     $response = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
-    foreach($bucket in $response.buckets){
+    foreach ($bucket in $response.buckets) {
         scoop bucket add $bucket.Name $bucket.Source
     }
     foreach ($app in $response.apps) {
-        Start-Job { scoop install "$($app.Source)/$($app.Name)" }
+
+        Start-Job -ScriptBlock {
+            param($source, $name)
+            scoop install "$source/$name"
+        } -ArgumentList $app.Source, $app.Name
+
+        Write-Host "Started job: installing '$($app.Source)/$($app.Name)'..." -ForegroundColor Green
     }
     Wait-Job *
 

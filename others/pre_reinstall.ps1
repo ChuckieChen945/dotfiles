@@ -13,25 +13,7 @@ foreach ($app in $response.apps) {
     }
 }
 
-# 删除非便携版软件的安装器，以便重装系统后重新安装
-$nonPortables = @(
-    "ad",
-    "md24",
-    "my25",
-    "microsoft-wsl",
-    "of",
-    "ps",
-    "sp",
-    "zb",
-    "zentools",
-    "baidunetdisk"
-)
-foreach ($nonPortable in $nonPortables) {
-    $path = scoop prefix $nonPortable
-    $parentPath = Split-Path -Path $path -Parent
-    Remove-Item -Path $parentPath -Force -ErrorAction SilentlyContinue -Recurse
-}
-
+# 重要!
 scoop download anderlli0053_DEV-tools/v2rayn-with-core-selfcontained
 
 $DownloadFolder = "D:\Downloads"
@@ -45,4 +27,7 @@ foreach ($path in $BackupPaths) {
     Write-Host "Copied files: $path to $DownloadFolder\reinstall_backup\"
 }
 
-Write-Host "All done."
+# Remove-Item -Path "D:\scoop\apps" -Recurse -Force
+# Remove-Item -Path "D:\scoop\shims" -Recurse -Force
+
+Write-Host '请确认所有软件下载完成后手动删除 "D:\scoop\apps" 和 "D:\scoop\shims"'

@@ -3,94 +3,121 @@
         {
             "##": "scoop依赖git更新仓库，git需放第一个",
             "Name": "git",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "md24",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "zentools",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "of",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "sp",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "zb",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "ps",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "ad",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "pwsh_with_context_menu",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "windowsterminal-shell",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "microsoft-wsl",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "7zip_with_context_menu",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "vscode_with_extensions",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "file_explorer_enhancer",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "anki_with_extensions",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "##": "TODO:想办法更新anki插件",
+            "Portable": true
         },
         {
             "Name": "pureref",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": true
+        },
+        {
+            "Name": "easy_u_vip",
+            "Source": "Chuckie_s",
+            "Portable": true
         },
         {
             "Name": "tim",
-            "Source": "okibcn_ScoopMaster"
+            "Source": "okibcn_ScoopMaster",
+            "Portable": false
         },
         {
             "Name": "WacomTablet-Install",
-            "Source": "okibcn_ScoopMaster"
+            "Source": "okibcn_ScoopMaster",
+            "Portable": false
         },
         {
             "Name": "baidunetdisk",
-            "Source": "okibcn_ScoopMaster"
+            "Source": "okibcn_ScoopMaster",
+            "Portable": false
         },
         {
             "##": [
                 "pip 编译时要用到Microsoft Visual C++ 14 Build Tools（不是runtime）",
                 "官方下载：在<https://my.visualstudio.com/Downloads> 中搜索Build Tools",
-                "TODO:这个包是2019版的，参考以下内容，提交pr将其升级为2022",
+                "TODO:okibcn_ScoopMaster中的这个包没有正式安装的样子，参考以下2019版的安装脚本，提交pr使其正式安装",
                 "https://github.com/okibcn/ScoopMaster/blob/master/bucket/vs_buildtools.json",
                 "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e"
             ],
             "Name": "msvc2022-buildtools-extra",
-            "Source": "okibcn_ScoopMaster"
+            "Source": "okibcn_ScoopMaster",
+            "Portable": true
         },
         {
             "Name": "WubiLex",
-            "Source": "okibcn_ScoopMaster"
+            "Source": "okibcn_ScoopMaster",
+            "Portable": true
         },
         {
             "##": [
@@ -100,58 +127,71 @@
                 "# 127.0.0.1 upgrade.xl9.xunlei.com"
             ],
             "Name": "ThunderSpeed",
-            "Source": "okibcn_ScoopMaster"
+            "Source": "okibcn_ScoopMaster",
+            "Portable": false
         },
         {
             "##": "为scoop启用aria2加速",
             "Name": "aria2",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "calibre",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "everything",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "##": "support unpacking InnoSetup files",
             "Name": "innounp",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "keepassxc",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "##": "TODO:将potplayer设为默认播放器，个性化设置",
             "Name": "potplayer",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "powertoys",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "pycharm",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "python",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "screenoff",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "starship",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "v2rayn",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "##": [
@@ -160,11 +200,13 @@
                 "starship 依赖"
             ],
             "Name": "vcredist-aio",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": false
         },
         {
             "Name": "wechat",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": false
         },
         {
             "##": [
@@ -172,50 +214,61 @@
                 "注意，是dot net runtime不是dotnet sdk(versions/dotnet6-sdk)"
             ],
             "Name": "windowsdesktop-runtime",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": false
         },
         {
             "Name": "gsudo",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "chezmoi",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "##": "TODO:https://github.com/ajeetdsouza/zoxide 配置zoxide",
             "Name": "zoxide",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "##": "zoxide的zi命令需要",
             "Name": "fzf",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "posh-git",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "CascadiaCode-NF",
-            "Source": "nerd-fonts"
+            "Source": "nerd-fonts",
+            "Portable": false
         },
         {
             "##": "microsoft-wsl需要先于archwsl安装",
             "Name": "microsoft-wsl",
-            "Source": "Chuckie_s"
+            "Source": "Chuckie_s",
+            "Portable": false
         },
         {
             "Name": "archwsl",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         },
         {
             "Name": "bbdown",
-            "Source": "main"
+            "Source": "main",
+            "Portable": true
         },
         {
             "Name": "ditto",
-            "Source": "extras"
+            "Source": "extras",
+            "Portable": true
         }
     ],
     "buckets": [
