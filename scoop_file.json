@@ -62,6 +62,10 @@
             "Source": "Chuckie_s"
         },
         {
+            "Name": "pureref",
+            "Source": "Chuckie_s"
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster"
         },
@@ -97,10 +101,6 @@
             ],
             "Name": "ThunderSpeed",
             "Source": "okibcn_ScoopMaster"
-        },
-        {
-            "Name": "pureref",
-            "Source": "anderlli0053_DEV-tools"
         },
         {
             "##": "为scoop启用aria2加速",
