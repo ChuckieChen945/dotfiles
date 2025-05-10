@@ -60,3 +60,5 @@ evalDeferred("autoLoadPlugin(\"\", \"Substanceconnector\", \"Substanceconnector\
 evalDeferred("autoLoadPlugin(\"\", \"Substancemaya\", \"Substancemaya\")");
 evalDeferred("autoLoadPlugin(\"\", \"Substanceworkflow\", \"Substanceworkflow\")");
 
+// stl
+evalDeferred("autoLoadPlugin(\"\", \"stlTranslator\", \"stlTranslator\")");

@@ -42,13 +42,14 @@ function Install-Scoop {
     try {
         Invoke-Expression "& {$(Invoke-RestMethod 'https://get.scoop.sh')} -RunAsAdmin -ScoopDir 'D:\scoop\'"
     } catch {}
-    . $PROFILE
+    & $PROFILE
 
     # Git is required for buckets
     scoop install "main/git"
     $response = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ChuckieChen945/dotfiles/refs/heads/main/scoop_file.json"
     foreach ($bucket in $response.buckets) {
         scoop bucket add $bucket.Name $bucket.Source
+        # TODO: get scoop folder owenership
     }
     foreach ($app in $response.apps) {
 

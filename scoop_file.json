@@ -189,6 +189,7 @@
             "Portable": true
         },
         {
+            "##":"TODO:自动安装suggest的包，开机启动等",
             "Name": "v2rayn",
             "Source": "extras",
             "Portable": true
@@ -210,10 +211,16 @@
         },
         {
             "##": [
-                "powertoys,v2rayN 等依赖 DotNet Desktop Runtime 6",
+                "powertoys,v2rayN 等依赖 DotNet Desktop Runtime 8",
                 "注意，是dot net runtime不是dotnet sdk(versions/dotnet6-sdk)"
             ],
-            "Name": "windowsdesktop-runtime",
+            "Name": "windowsdesktop-runtime-lts",
+            "Source": "extras",
+            "Portable": false
+        },
+        {
+            "##":"'v2rayN' suggests installing 'v2ray'.",
+            "Name": "v2ray",
             "Source": "extras",
             "Portable": false
         },
