@@ -1,0 +1,5 @@
+<application>
+  <component name="TerminalLocalOptions">
+    <option name="shellPath" value="D:\scoop\apps\pwsh\current\pwsh.exe" />
+  </component>
+</application>

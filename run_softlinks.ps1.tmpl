@@ -1,0 +1,34 @@
+
+#Requires -RunAsAdministrator
+
+
+# hosts
+$HOSTS_TARGET = "C:\\Windows\\System32\\drivers\\etc\\hosts"
+$HOSTS_SOURCE = "`"{{ .chezmoi.sourceDir }}\\hosts`""
+if (Test-Path $HOSTS_TARGET) {
+    Remove-Item -Force $HOSTS_TARGET
+}
+cmd /c mklink $HOSTS_TARGET $HOSTS_SOURCE
+
+
+# scoop
+$SCOOP_TARGET = 'D:\scoop'
+$SCOOP_SOURCE = "{{ .chezmoi.sourceDir }}/scoop"
+
+Get-ChildItem -Path $SCOOP_SOURCE -Recurse -File | ForEach-Object {
+    $relativePath = $_.FullName.Substring($SCOOP_SOURCE.Length).TrimStart('\')
+    $targetPath = Join-Path $SCOOP_TARGET $relativePath
+
+    $targetSubDir = Split-Path $targetPath -Parent
+    if (-not (Test-Path $targetSubDir)) {
+        New-Item -ItemType Directory -Path $targetSubDir -Force | Out-Null
+    }
+
+    if (Test-Path $targetPath) {
+        Remove-Item -Force $targetPath
+    }
+
+    cmd /c mklink "`"$targetPath`"" "`"$($_.FullName)`""
+}
+
+Write-Host "All hard links have been made."

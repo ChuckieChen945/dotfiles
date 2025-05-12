@@ -3,7 +3,10 @@
     "workbench.iconTheme": "material-icon-theme",
     "vim.useSystemClipboard": true,
     "diffEditor.maxComputationTime": 0,
-    "editor.multiCursorLimit": 100000,
-    "workbench.colorCustomizations": {},
-    "settingsSync.ignoredExtensions": []
+    "terminal.integrated.profiles.windows": {
+        "pwsh": {
+            "path": "D:\\scoop\\apps\\pwsh\\current\\pwsh.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "pwsh"
 }
