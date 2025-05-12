@@ -6,6 +6,9 @@
     // Launch Settings
     "alwaysOnTop": true,
     // Miscellaneous
+    // TODO: 跟进这个问题
+    // https://github.com/microsoft/terminal/issues/9996
+    // https://github.com/microsoft/terminal/issues/10872
     "startOnUserLogin": true,
     "useAcrylicInTabRow": true,
     "compatibility.allowHeadless": true,
