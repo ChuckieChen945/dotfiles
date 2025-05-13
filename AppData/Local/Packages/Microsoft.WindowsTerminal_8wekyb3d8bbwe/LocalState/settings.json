@@ -39,42 +39,56 @@
                 "action": "sendInput",
                 "input": "powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa >nul 2>&1 && powercfg /setactive aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
             },
-            "name": "A卓越性能"
+            "name": "A_卓越性能"
         },
         {
             "command": {
                 "action": "sendInput",
                 "input": "powercfg /duplicatescheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb >nul 2>&1 && powercfg /setactive bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
             },
-            "name": "A高性能"
+            "name": "A_高性能"
         },
         {
             "command": {
                 "action": "sendInput",
                 "input": "powercfg /duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e cccccccc-cccc-cccc-cccc-cccccccccccc >nul 2>&1 && powercfg /setactive cccccccc-cccc-cccc-cccc-cccccccccccc"
             },
-            "name": "A平衡"
+            "name": "A_平衡"
         },
         {
             "command": {
                 "action": "sendInput",
                 "input": "powercfg /duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a dddddddd-dddd-dddd-dddd-dddddddddddd >nul 2>&1 && powercfg /setactive dddddddd-dddd-dddd-dddd-dddddddddddd"
             },
-            "name": "A节能"
+            "name": "A_节能"
         },
         {
             "command": {
                 "action": "sendInput",
                 "input": "bbdown '' -q '1080p 高清/360p 流畅' --audio-ascending"
             },
-            "name": "A bbdown download"
+            "name": "A_bbdown_download"
         },
         {
             "command": {
                 "action": "sendInput",
                 "input": "edge-tts -t 'This is a test.' -v 'en-GB-LibbyNeural' --write-media 'test.mp3'"
             },
-            "name": "A edge-tts"
+            "name": "A_edge-tts"
+        },
+        {
+            "command": {
+                "action": "sendInput",
+                "input": "set http_proxy=http://127.0.0.1:10808 && set https_proxy=http://127.0.0.1:10808"
+            },
+            "name": "A_set_proxy"
+        },
+        {
+            "command": {
+                "action": "sendInput",
+                "input": "set http_proxy= && set https_proxy="
+            },
+            "name": "A_cancel_proxy"
         }
     ]
 }
