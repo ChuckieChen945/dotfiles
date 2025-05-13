@@ -226,3 +226,7 @@ Windows Registry Editor Version 5.00
 ; scoop的链接依赖开发者模式
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock]
 "AllowDevelopmentWithoutDevLicense"=dword:00000001
+
+; Enable sudo
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Sudo]
+"Enabled"=dword:00000001

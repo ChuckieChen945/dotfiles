@@ -8,5 +8,6 @@
             "path": "D:\\scoop\\apps\\pwsh\\current\\pwsh.exe"
         }
     },
-    "terminal.integrated.defaultProfile.windows": "pwsh"
+    "terminal.integrated.defaultProfile.windows": "pwsh",
+    "git.confirmSync": false
 }
