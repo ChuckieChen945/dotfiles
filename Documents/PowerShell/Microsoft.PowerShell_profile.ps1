@@ -2,8 +2,18 @@
 # https://github.com/devblackops/Terminal-Icons
 Import-Module -Name Terminal-Icons
 
+$PSOption = @{
+    PredictionSource = 'History'
+    PredictionViewStyle = 'ListView'
+}
+Set-PSReadLineOption @PSOption
+
+Import-Module PSCompletions
+# TODO:https://pixi.carapace.sh/#in-a-nutshell
+
 # enable prediction
-Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # enable starship
 Invoke-Expression (&starship init powershell)

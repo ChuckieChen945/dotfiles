@@ -88,6 +88,11 @@
             "Portable": true
         },
         {
+            "Name": "my_pycharm-professional",
+            "Source": "Chuckie_s",
+            "Portable": true
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster",
             "Portable": false
@@ -98,9 +103,19 @@
             "Portable": false
         },
         {
-            "Name": "baidunetdisk",
-            "Source": "okibcn_ScoopMaster",
+            "Name": "BaiduNetdisk",
+            "Source": "abgox_abgo_bucket",
             "Portable": false
+        },
+        {
+            "Name": "BaiduTranslate",
+            "Source": "abgox_abgo_bucket",
+            "Portable": false
+        },
+        {
+            "Name": "PSCompletions",
+            "Source": "abgox_abgox_bucket",
+            "Portable": true
         },
         {
             "##": [
@@ -169,11 +184,6 @@
             "Portable": true
         },
         {
-            "Name": "pycharm",
-            "Source": "extras",
-            "Portable": true
-        },
-        {
             "Name": "python",
             "Source": "main",
             "Portable": true
@@ -221,7 +231,7 @@
         {
             "##":"'v2rayN' suggests installing 'v2ray'.",
             "Name": "v2ray",
-            "Source": "extras",
+            "Source": "main",
             "Portable": false
         },
         {
@@ -302,10 +312,20 @@
         {
             "Name": "anderlli0053_DEV-tools",
             "Source": "https://github.com/anderlli0053/DEV-tools"
+        },
+        {
+            "Name": "abgox_abgo_bucket",
+            "Source": "https://github.com/abgox/abgo_bucket"
+        },
+        {
+            "Name": "abgox_abgox_bucket ",
+            "Source": "https://github.com/abgox/abgox-bucket"
         }
     ],
     "config": {
         "proxy": "127.0.0.1:10808",
-        "root_path": "D:\\scoop\\"
+        "root_path": "D:\\scoop\\",
+        "abgo_bucket_no_shortcut": true,
+        "abgo_bucket_no_confirm": true
     }
 }
