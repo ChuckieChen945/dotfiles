@@ -22,5 +22,4 @@
 [https]
 	proxy = https://127.0.0.1:10808
 [safe]
-	directory = D:/
-	directory = E:/
+	directory = *
