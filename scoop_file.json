@@ -93,6 +93,11 @@
             "Portable": true
         },
         {
+            "Name": "my_PSCompletions",
+            "Source": "Chuckie_s",
+            "Portable": true
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster",
             "Portable": false
@@ -111,11 +116,6 @@
             "Name": "BaiduTranslate",
             "Source": "abgox_abgo_bucket",
             "Portable": false
-        },
-        {
-            "Name": "PSCompletions",
-            "Source": "abgox_abgox_bucket",
-            "Portable": true
         },
         {
             "##": [
