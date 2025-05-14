@@ -2,15 +2,6 @@
 # https://github.com/devblackops/Terminal-Icons
 Import-Module -Name Terminal-Icons
 
-$PSOption = @{
-    PredictionSource = 'History'
-    PredictionViewStyle = 'ListView'
-}
-Set-PSReadLineOption @PSOption
-
-Import-Module PSCompletions
-# TODO:https://pixi.carapace.sh/#in-a-nutshell
-
 # enable prediction
 Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
@@ -25,3 +16,7 @@ Import-Module gsudoModule
 
 # init zoxide
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
+# this line should be after Set-PSReadlineKeyHandler
+Import-Module PSCompletions
+# TODO:https://pixi.carapace.sh/#in-a-nutshell

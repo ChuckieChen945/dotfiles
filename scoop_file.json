@@ -257,16 +257,6 @@
             "Portable": true
         },
         {
-            "Name": "posh-git",
-            "Source": "extras",
-            "Portable": true
-        },
-        {
-            "Name": "CascadiaCode-NF",
-            "Source": "nerd-fonts",
-            "Portable": false
-        },
-        {
             "##": "microsoft-wsl需要先于archwsl安装",
             "Name": "microsoft-wsl",
             "Source": "Chuckie_s",
@@ -298,10 +288,6 @@
             "Source": "https://github.com/ScoopInstaller/Extras"
         },
         {
-            "Name": "nerd-fonts",
-            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts"
-        },
-        {
             "Name": "Chuckie_s",
             "Source": "https://github.com/ChuckieChen945/Chuckie_s"
         },
@@ -318,7 +304,7 @@
             "Source": "https://github.com/abgox/abgo_bucket"
         },
         {
-            "Name": "abgox_abgox_bucket ",
+            "Name": "abgox_abgox_bucket",
             "Source": "https://github.com/abgox/abgox-bucket"
         }
     ],
