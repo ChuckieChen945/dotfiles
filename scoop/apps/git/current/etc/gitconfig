@@ -6,10 +6,6 @@
 [color]
 	interactive = true
 	ui = auto
-[credential]
-	helper = manager-core
-[safe]
-	directory = D:/Chuckie/OneDrive/Desktop/Notes
 [user]
 	name = Chuckie Chen
 	email = chuckie_chen945@qq.com
