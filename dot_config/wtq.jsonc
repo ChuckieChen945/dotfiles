@@ -10,12 +10,14 @@
 					"Modifiers": "Alt"
 				}
 			],
-			"HorizontalScreenCoverage": 50,
+			"HorizontalScreenCoverage": 80,
 			"VerticalScreenCoverage": 100,
 			"HorizontalAlign": "Right",
 			"OffScreenLocations": [
 				"Above"
-			]
+			],
+			"HideOnFocusLost": "Never",
+            "Arguments": "D:\\zzz_test\\"
 		},
 		// {
 		// 	"Name": "Windows Explorer",
@@ -34,20 +36,21 @@
 		// 	]
 		// },
 		{
-			"Name": "edge",
-			"FileName": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+			"Name": "msedge",
+			"FileName": "msedge",
 			"Hotkeys": [
 				{
 					"Key": "E",
 					"Modifiers": "Alt"
 				}
 			],
-			"HorizontalScreenCoverage": 50,
+			"HorizontalScreenCoverage": 80,
 			"VerticalScreenCoverage": 100,
 			"HorizontalAlign": "Right",
 			"OffScreenLocations": [
 				"Right"
-			]
+			],
+			"Arguments": "https://chatgpt.com/"
 		},
 		{
 			"Name": "v2rayn",

@@ -23,3 +23,6 @@
 	proxy = https://127.0.0.1:10808
 [safe]
 	directory = *
+[credential]
+	; 使用scoop安装的git 未注册credential-manager，必须写全路径
+	helper = !\"D:/scoop/apps/git/2.49.0/mingw64/bin/git-credential-manager.exe\"

@@ -27,8 +27,10 @@ foreach ($path in $BackupPaths) {
     Write-Host "Copied files: $path to $DownloadFolder\reinstall_backup\"
 }
 
-Remove-Item -Path "D:\scoop\apps" -Recurse -Force
-Remove-Item -Path "D:\scoop\modules" -Recurse -Force
-Remove-Item -Path "D:\scoop\shims" -Recurse -Force
 
-Write-Host '请确认所有软件下载完成后手动删除 "D:\scoop\apps" 和 "D:\scoop\shims"'
+Write-Host @(
+    "请确认所有软件下载完成后手动删除 'D:\scoop\apps' 和 'D:\scoop\shims'`n"
+    "Remove-Item -Path 'D:\scoop\apps' -Recurse -Force`n"
+    "Remove-Item -Path 'D:\scoop\modules' -Recurse -Force`n"
+    "Remove-Item -Path 'D:\scoop\shims' -Recurse -Force"
+)

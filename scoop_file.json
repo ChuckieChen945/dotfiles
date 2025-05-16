@@ -103,6 +103,16 @@
             "Portable": true
         },
         {
+            "Name": "ditto",
+            "Source": "Chuckie_s",
+            "Portable": true
+        },
+        {
+            "Name": "msedge",
+            "Source": "Chuckie_s",
+            "Portable": true
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster",
             "Portable": false
@@ -280,11 +290,6 @@
         {
             "Name": "bbdown",
             "Source": "main",
-            "Portable": true
-        },
-        {
-            "Name": "ditto",
-            "Source": "extras",
             "Portable": true
         }
     ],
