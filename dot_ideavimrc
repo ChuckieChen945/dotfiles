@@ -1,2 +1,4 @@
 # yank to system clipboard
 set clipboard+=unnamed
+
+set keep-english-in-normal

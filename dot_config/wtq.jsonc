@@ -1,0 +1,85 @@
+{
+	"$schema": "wtq.schema.json",
+	"Apps": [
+		{
+			"Name": "Code",
+			"FileName": "Code",
+			"Hotkeys": [
+				{
+					"Key": "Q",
+					"Modifiers": "Alt"
+				}
+			],
+			"HorizontalScreenCoverage": 50,
+			"VerticalScreenCoverage": 100,
+			"HorizontalAlign": "Right",
+			"OffScreenLocations": [
+				"Above"
+			]
+		},
+		// {
+		// 	"Name": "Windows Explorer",
+		// 	"FileName": "explorer",
+		// 	"Hotkeys": [
+		// 		{
+		// 			"Key": "W",
+		// 			"Modifiers": "Alt"
+		// 		}
+		// 	],
+		// 	"HorizontalScreenCoverage": 50,
+		// 	"VerticalScreenCoverage": 100,
+		// 	"HorizontalAlign": "Left",
+		// 	"OffScreenLocations": [
+		// 		"Left"
+		// 	]
+		// },
+		{
+			"Name": "edge",
+			"FileName": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+			"Hotkeys": [
+				{
+					"Key": "E",
+					"Modifiers": "Alt"
+				}
+			],
+			"HorizontalScreenCoverage": 50,
+			"VerticalScreenCoverage": 100,
+			"HorizontalAlign": "Right",
+			"OffScreenLocations": [
+				"Right"
+			]
+		},
+		{
+			"Name": "v2rayn",
+			"FileName": "v2rayN",
+			"Hotkeys": [
+				{
+					"Key": "A",
+					"Modifiers": "Alt"
+				}
+			],
+			"HorizontalScreenCoverage": 50,
+			"VerticalScreenCoverage": 100,
+			"HorizontalAlign": "Left",
+			"OffScreenLocations": [
+				"Below"
+			]
+		},
+		{
+			"Name": "KeePassXC",
+			"FileName": "keepassxc",
+			"Hotkeys": [
+				{
+					"Key": "S",
+					"Modifiers": "Alt"
+				}
+			],
+			"HorizontalScreenCoverage": 50,
+			"VerticalScreenCoverage": 100,
+			"HorizontalAlign": "Left",
+			"OffScreenLocations": [
+				"Below"
+			]
+		}
+	]
+}

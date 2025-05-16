@@ -98,6 +98,11 @@
             "Portable": true
         },
         {
+            "Name": "wtq",
+            "Source": "Chuckie_s",
+            "Portable": true
+        },
+        {
             "Name": "tim",
             "Source": "okibcn_ScoopMaster",
             "Portable": false
@@ -153,6 +158,11 @@
         },
         {
             "Name": "calibre",
+            "Source": "extras",
+            "Portable": true
+        },
+        {
+            "Name": "screentogif",
             "Source": "extras",
             "Portable": true
         },

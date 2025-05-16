@@ -9,5 +9,6 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "pwsh",
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "filename-lint.enabled": true
 }
