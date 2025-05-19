@@ -83,6 +83,22 @@
 			"OffScreenLocations": [
 				"Below"
 			]
+		},
+		{
+			"Name": "tim",
+			"FileName": "tim",
+			"Hotkeys": [
+				{
+					"Key": "D",
+					"Modifiers": "Alt"
+				}
+			],
+			"HorizontalScreenCoverage": 50,
+			"VerticalScreenCoverage": 100,
+			"HorizontalAlign": "Left",
+			"OffScreenLocations": [
+				"Below"
+			]
 		}
 	]
 }
