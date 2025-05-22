@@ -1,0 +1,4 @@
+[wsl2]
+networkingMode=mirrored
+firewall=false
+autoProxy=true

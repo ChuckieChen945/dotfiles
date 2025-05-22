@@ -219,7 +219,7 @@
             "Portable": true
         },
         {
-            "##":"TODO:自动安装suggest的包，开机启动等",
+            "##": "TODO:自动安装suggest的包，开机启动等",
             "Name": "v2rayn",
             "Source": "extras",
             "Portable": true
@@ -249,7 +249,7 @@
             "Portable": false
         },
         {
-            "##":"'v2rayN' suggests installing 'v2ray'.",
+            "##": "'v2rayN' suggests installing 'v2ray'.",
             "Name": "v2ray",
             "Source": "main",
             "Portable": false
@@ -277,18 +277,17 @@
             "Portable": true
         },
         {
-            "##": "microsoft-wsl需要先于archwsl安装",
-            "Name": "microsoft-wsl",
+            "Name": "archlinux",
             "Source": "Chuckie_s",
             "Portable": false
         },
         {
-            "Name": "archwsl",
-            "Source": "extras",
+            "Name": "bbdown",
+            "Source": "main",
             "Portable": true
         },
         {
-            "Name": "bbdown",
+            "Name": "docker",
             "Source": "main",
             "Portable": true
         }

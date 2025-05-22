@@ -1,7 +1,6 @@
 {
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
-    "vim.useSystemClipboard": true,
     "diffEditor.maxComputationTime": 0,
     "terminal.integrated.profiles.windows": {
         "pwsh": {
@@ -10,12 +9,12 @@
     },
     "terminal.integrated.defaultProfile.windows": "pwsh",
     "git.confirmSync": false,
-    "filename-lint.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
+    "files.trimTrailingWhitespace": true,
+    // Python
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.fixAll": [
-        "source.unusedImports"
-    ],
-    "editor.defaultFormatter": "charliermarsh.ruff",
+    "python.analysis.fixAll": ["source.unusedImports"],
     "files.exclude": {
         "**/__pycache__": true,
         "**/.cache": true,
@@ -27,5 +26,15 @@
         "**/.pytest_cache": true,
         "**/.ruff_cache": true,
         "**/.tox": true
-    }
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "isort.args": ["--profile", "black"],
+    // Others
+    "vim.useSystemClipboard": true,
+    "filename-lint.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "prettier.tabWidth": 4,
+    "indentRainbow.indicatorStyle": "light"
 }
