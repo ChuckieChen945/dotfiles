@@ -6,4 +6,4 @@ add_newline = true
 
 # Timeout for commands executed by starship (in milliseconds).
 # uint64 max = 2^64−1 = 18446744073709551615
-command_timeout = 999999999999999999
+command_timeout = 0
