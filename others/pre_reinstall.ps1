@@ -13,7 +13,6 @@ foreach ($app in $response.apps) {
     }
 }
 
-# TODO:update this manifest
 scoop download anderlli0053_DEV-tools/v2rayn-with-core-selfcontained
 
 $DownloadFolder = "D:\Downloads"
