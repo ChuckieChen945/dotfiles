@@ -14,13 +14,12 @@
     "editor.linkedEditing": true,
     "files.trimTrailingWhitespace": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    // JSON
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    "editor.detectIndentation": false,
+    "files.encoding": "utf8",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "terminal.integrated.suggest.enabled": true,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "editor.stickyTabStops": true,
     // Python
     "python.analysis.autoImportCompletions": true,
     "python.analysis.fixAll": ["source.unusedImports"],
@@ -39,11 +38,30 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "python.terminal.activateEnvironment": true,
     "isort.args": ["--profile", "black"],
+    // Powershell
+    "powershell.powerShellAdditionalExePaths": {
+        "pwsh": "D:\\scoop\\apps\\pwsh\\current\\pwsh.exe"
+    },
+    "powershell.powerShellDefaultVersion": "pwsh",
+    "[powershell]": {
+        "editor.defaultFormatter": "ms-vscode.powershell"
+    },
     // Others
     "vim.useSystemClipboard": true,
     "filename-lint.enabled": true,
     "github.copilot.nextEditSuggestions.enabled": true,
     "prettier.tabWidth": 4,
-    "indentRainbow.indicatorStyle": "light"
+    "indentRainbow.indicatorStyle": "light",
+    // Leetcode
+    "labuladong-leetcode.workspaceFolder": "",
+    "labuladong-leetcode.endpoint": "leetcode",
+    "labuladong-leetcode.filePath": {
+        "default": {
+            "folder": "",
+            "filename": "${id}.${cn_name}.${ext}"
+        }
+    },
+    "labuladong-leetcode.defaultLanguage": "python3"
 }
