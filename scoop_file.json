@@ -295,6 +295,10 @@
             "Name": "neovim",
             "Source": "main",
             "Portable": true
+        },
+        {
+            "Name": "CascadiaCode-NF",
+            "Source": "nerd-fonts"
         }
     ],
     "buckets": [
@@ -325,6 +329,10 @@
         {
             "Name": "abgox_abgox_bucket",
             "Source": "https://github.com/abgox/abgox-bucket"
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts"
         }
     ],
     "config": {

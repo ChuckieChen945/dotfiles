@@ -9,6 +9,8 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "pwsh",
+    "terminal.integrated.fontFamily": "Cascadia Code",
+    "editor.fontFamily": "Cascadia Code",
     "git.confirmSync": false,
     "editor.formatOnSave": true,
     "editor.linkedEditing": true,
