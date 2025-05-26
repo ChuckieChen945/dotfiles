@@ -1,0 +1,55 @@
+{
+    "workspaces": [
+        {
+            "id": "{6873177B-1E27-40EE-B43B-C44BA4CAA00A}",
+            "name": "3D",
+            "creation-time": null,
+            "last-launched-time": null,
+            "is-shortcut-needed": false,
+            "move-existing-windows": true,
+            "monitor-configuration": [
+                {
+                    "id": "SDC4180",
+                    "instance-id": "5&380acc19&0&UID512",
+                    "monitor-number": 1,
+                    "dpi": 192,
+                    "monitor-rect-dpi-aware": {
+                        "top": 0,
+                        "left": 0,
+                        "width": 2880,
+                        "height": 1620
+                    },
+                    "monitor-rect-dpi-unaware": {
+                        "top": 0,
+                        "left": 0,
+                        "width": 1440,
+                        "height": 810
+                    }
+                }
+            ],
+            "applications": [
+                {
+                    "id": "{ce93cdf5-4e77-4970-adf4-3646f516c4d2}",
+                    "application": "Maya",
+                    "application-path": "C:\\Program Files\\Autodesk\\Maya2025\\bin\\maya.exe",
+                    "title": "Maya",
+                    "package-full-name": "",
+                    "app-user-model-id": "",
+                    "pwa-app-id": "",
+                    "command-line-arguments": "",
+                    "is-elevated": false,
+                    "can-launch-elevated": true,
+                    "minimized": false,
+                    "maximized": false,
+                    "position": {
+                        "X": 208,
+                        "Y": 99,
+                        "width": 906,
+                        "height": 654
+                    },
+                    "monitor": 1
+                }
+            ]
+        }
+    ]
+}
