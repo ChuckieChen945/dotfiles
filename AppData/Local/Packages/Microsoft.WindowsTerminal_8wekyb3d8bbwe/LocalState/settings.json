@@ -22,6 +22,7 @@
     "profiles": [
         {
             "name": "PowerShell",
+            "cursorShape": "filledBox",
             "commandline": "pwsh",
             "useAcrylic": true,
             "opacity": 0,

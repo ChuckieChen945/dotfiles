@@ -3,7 +3,7 @@
 Import-Module -Name Terminal-Icons
 
 # enable prediction
-Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView
+Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView -EditMode vi
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # enable starship
