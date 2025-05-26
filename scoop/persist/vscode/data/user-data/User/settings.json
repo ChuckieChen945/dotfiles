@@ -57,7 +57,7 @@
         "editor.defaultFormatter": "ms-vscode.powershell"
     },
     // Vim
-    "vscode-neovim.neovimExecutablePaths.win32": "D:\\scoop\\apps\\neovim\\current\\bin\\nvim.exe",
+    "vim.useSystemClipboard": true,
     // Others
     "filename-lint.enabled": true,
     "github.copilot.nextEditSuggestions.enabled": true,
@@ -76,6 +76,5 @@
     "labuladong-leetcode.defaultLanguage": "python3",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
-    },
-    "vim.useSystemClipboard": true
+    }
 }
