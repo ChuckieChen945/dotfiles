@@ -36,10 +36,13 @@
         "**/.tox": true
     },
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
     },
-    "python.terminal.activateEnvironment": true,
     "isort.args": ["--profile", "black"],
+    "python.terminal.activateEnvironment": true,
     // Powershell
     "powershell.powerShellAdditionalExePaths": {
         "pwsh": "D:\\scoop\\apps\\pwsh\\current\\pwsh.exe"
