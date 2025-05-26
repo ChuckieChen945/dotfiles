@@ -9,8 +9,11 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "pwsh",
-    "terminal.integrated.fontFamily": "Cascadia Code",
-    "editor.fontFamily": "Cascadia Code",
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+    "terminal.integrated.fontWeight": "325",
+    "editor.fontWeight": "325",
+    "editor.fontFamily": "CaskaydiaCove Nerd Font",
+    "editor.lineHeight": 1.5,
     "git.confirmSync": false,
     "editor.formatOnSave": true,
     "editor.linkedEditing": true,
@@ -73,5 +76,6 @@
     "labuladong-leetcode.defaultLanguage": "python3",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
-    }
+    },
+    "vim.useSystemClipboard": true
 }

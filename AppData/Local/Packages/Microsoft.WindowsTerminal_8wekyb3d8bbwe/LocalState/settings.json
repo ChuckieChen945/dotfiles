@@ -29,7 +29,8 @@
             "colorScheme": "One Half Dark",
             "hidden": false,
             "font": {
-                "face": "Cascadia Code"
+                "face": "CaskaydiaCove Nerd Font",
+                "weight": "semi-light"
             },
             "startingDirectory": "E:\\zzz_test"
         }
