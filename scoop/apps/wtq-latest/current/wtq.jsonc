@@ -46,6 +46,7 @@
             "VerticalScreenCoverage": 100,
             "HorizontalAlign": "Right",
             "OffScreenLocations": ["Right"],
+            "HideOnFocusLost": "Never",
             "Arguments": "https://chatgpt.com/"
         },
         {
