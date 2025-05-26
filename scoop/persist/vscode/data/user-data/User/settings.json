@@ -51,8 +51,9 @@
     "[powershell]": {
         "editor.defaultFormatter": "ms-vscode.powershell"
     },
+    // Vim
+    "vscode-neovim.neovimExecutablePaths.win32": "D:\\scoop\\apps\\neovim\\current\\bin\\nvim.exe",
     // Others
-    "vim.useSystemClipboard": true,
     "filename-lint.enabled": true,
     "github.copilot.nextEditSuggestions.enabled": true,
     "prettier.tabWidth": 4,
@@ -67,5 +68,8 @@
             "filename": "${id}.${cn_name}.${ext}"
         }
     },
-    "labuladong-leetcode.defaultLanguage": "python3"
+    "labuladong-leetcode.defaultLanguage": "python3",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
 }

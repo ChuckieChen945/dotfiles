@@ -290,6 +290,11 @@
             "Name": "docker",
             "Source": "main",
             "Portable": true
+        },
+        {
+            "Name": "neovim",
+            "Source": "main",
+            "Portable": true
         }
     ],
     "buckets": [
