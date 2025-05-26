@@ -5,6 +5,8 @@ Import-Module -Name Terminal-Icons
 # enable prediction
 Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView -EditMode vi
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key Ctrl+y -Function Copy -ViMode Command
+Set-PSReadLineKeyHandler -Key Ctrl+p -Function Paste -ViMode Command
 
 # enable starship
 Invoke-Expression (&starship init powershell)
