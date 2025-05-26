@@ -1,10 +1,10 @@
 {
-  "folders": [
-    {
-      "path": "C:\\Users\\Chuckie\\.local\\share\\chezmoi"
-    },
-    {
-      "path": "D:\\scoop\\buckets\\Chuckie_s"
-    }
-  ]
+    "folders": [
+        {
+            "path": "C:\\Users\\Chuckie\\.local\\share\\chezmoi"
+        },
+        {
+            "path": "D:\\scoop\\buckets\\Chuckie_s"
+        }
+    ]
 }

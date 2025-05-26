@@ -57,6 +57,7 @@
     "github.copilot.nextEditSuggestions.enabled": true,
     "prettier.tabWidth": 4,
     "indentRainbow.indicatorStyle": "light",
+    "pangu.auto_format_on_save": true,
     // Leetcode
     "labuladong-leetcode.workspaceFolder": "",
     "labuladong-leetcode.endpoint": "leetcode",
