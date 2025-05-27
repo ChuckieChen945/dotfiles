@@ -1,0 +1,129 @@
+{
+    "Print to Console": {
+        "prefix": "write",
+        "body": ["Write-Host \"$1\"", "$0"],
+        "description": "Write output to console"
+    },
+    "Function Definition": {
+        "prefix": "func",
+        "body": [
+            "function ${1:MyFunction} {",
+            "    [CmdletBinding()]",
+            "    param(",
+            "        [Parameter(Mandatory=$true)]",
+            "        [string] $${2:Param1}",
+            "    )",
+            "",
+            "    $0",
+            "}"
+        ],
+        "description": "Define a PowerShell function with parameters"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": ["if ($1) {", "    $0", "}"],
+        "description": "If statement"
+    },
+    "ForEach Loop": {
+        "prefix": "foreach",
+        "body": ["foreach ($${1:item} in $${2:collection}) {", "    $0", "}"],
+        "description": "ForEach loop"
+    },
+    "Try Catch Block": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "    $1",
+            "} catch {",
+            "    Write-Error \"$($_.Exception.Message)\"",
+            "}"
+        ],
+        "description": "Try Catch block"
+    },
+    "Read File Content": {
+        "prefix": "readfile",
+        "body": [
+            "$content = Get-Content -Path \"${1:path}\\${2:file}.txt\"",
+            "$0"
+        ],
+        "description": "Read content from a file"
+    },
+    "Write File Content": {
+        "prefix": "writefile",
+        "body": [
+            "Set-Content -Path \"${1:path}\\${2:file}.txt\" -Value \"${3:content}\"",
+            "$0"
+        ],
+        "description": "Write content to a file"
+    },
+    "Append File Content": {
+        "prefix": "appendfile",
+        "body": [
+            "Add-Content -Path \"${1:path}\\${2:file}.txt\" -Value \"${3:more content}\"",
+            "$0"
+        ],
+        "description": "Append content to a file"
+    },
+    "Check File Exists": {
+        "prefix": "fileexists",
+        "body": [
+            "if (Test-Path \"${1:path}\\${2:file}.txt\") {",
+            "    $0",
+            "}"
+        ],
+        "description": "Check if a file exists"
+    },
+    "Import Module": {
+        "prefix": "import",
+        "body": ["Import-Module -Name \"${1:ModuleName}\" -Force", "$0"],
+        "description": "Import a PowerShell module"
+    },
+    "Script Parameters Block": {
+        "prefix": "paramblock",
+        "body": [
+            "param(",
+            "    [Parameter(Mandatory=$true)]",
+            "    [string] $${1:InputFile},",
+            "    [int] $${2:Count} = ${3:10}",
+            ")",
+            "",
+            "$0"
+        ],
+        "description": "Define script parameters"
+    },
+    "Write to Log File": {
+        "prefix": "logfile",
+        "body": [
+            "$timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'",
+            "Add-Content -Path \"${1:logfile}.log\" -Value \"[$timestamp] ${2:Log message}\"",
+            "$0"
+        ],
+        "description": "Append timestamped log message to file"
+    },
+    "Create New File": {
+        "prefix": "newfile",
+        "body": [
+            "New-Item -Path \"${1:path}\\${2:file}.txt\" -ItemType File -Force",
+            "$0"
+        ],
+        "description": "Create a new file"
+    },
+    "List Files in Directory": {
+        "prefix": "ls",
+        "body": [
+            "Get-ChildItem -Path \"${1:folderPath}\" -Filter \"${2:*.*}\" -Recurse",
+            "$0"
+        ],
+        "description": "List files recursively in a directory"
+    },
+    "Sleep Command": {
+        "prefix": "sleep",
+        "body": ["Start-Sleep -Seconds ${1:5}", "$0"],
+        "description": "Pause script for a number of seconds"
+    },
+    "Exit Script": {
+        "prefix": "exit",
+        "body": ["exit ${1:0}", "$0"],
+        "description": "Exit script with status code"
+    }
+}

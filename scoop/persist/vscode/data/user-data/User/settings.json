@@ -75,7 +75,6 @@
         }
     ],
     "vim.shell": "D:\\scoop\\apps\\pwsh\\current\\pwsh.exe",
-    "vim.sneak": true,
     "vim.camelCaseMotion.enable": true,
     "vim.autoSwitchInputMethod.enable": true,
     "vim.autoSwitchInputMethod.defaultIM": "2052-0",
