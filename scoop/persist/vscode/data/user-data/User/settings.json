@@ -10,8 +10,8 @@
     },
     "terminal.integrated.defaultProfile.windows": "pwsh",
     "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
-    "terminal.integrated.fontWeight": "325",
-    "editor.fontWeight": "325",
+    "terminal.integrated.fontWeight": 325,
+    "editor.fontWeight": 325,
     "editor.fontFamily": "CaskaydiaCove Nerd Font",
     "editor.lineHeight": 1.5,
     "git.confirmSync": false,
@@ -57,7 +57,32 @@
         "editor.defaultFormatter": "ms-vscode.powershell"
     },
     // Vim
+    "vim.easymotion": true,
+    "vim.easymotionKeys": "asdfghjkl;",
+    "vim.easymotionMarkerBackgroundColor": "#282c34cc", // 主题背景色带透明，柔和不突兀
+    "vim.easymotionMarkerForegroundColorOneChar": "#61afef", // 蓝青，强调单字符标记
+    "vim.easymotionMarkerForegroundColorTwoCharFirst": "#c678dd", // 紫色，轻盈醒目
+    "vim.easymotionMarkerForegroundColorTwoCharSecond": "#e06c75", // 珊瑚红，区分第二字符
+    "vim.easymotionIncSearchForegroundColor": "#98c379", // 绿色，突显搜索匹配
+    "vim.easymotionDimColor": "#5c6370", // 灰色，One Dark Pro 的注释色
+    "vim.easymotionDimBackground": true,
+    "vim.leader": "<Space>",
     "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.shell": "D:\\scoop\\apps\\pwsh\\current\\pwsh.exe",
+    "vim.sneak": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "2052-0",
+    "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\scoop\\apps\\im-select-imm\\current\\im-select-imm.exe",
+    "vim.autoSwitchInputMethod.switchIMCmd": "D:\\scoop\\apps\\im-select-imm\\current\\im-select-imm.exe {im}",
+    "vim.replaceWithRegister": true,
+    "vim.foldfix": true,
     // Others
     "filename-lint.enabled": true,
     "github.copilot.nextEditSuggestions.enabled": true,
