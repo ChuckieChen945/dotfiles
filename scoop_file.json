@@ -118,6 +118,7 @@
             "Portable": false
         },
         {
+            "##": "TODO: fix 安装脚本",
             "Name": "WacomTablet-Install",
             "Source": "okibcn_ScoopMaster",
             "Portable": false
@@ -138,7 +139,8 @@
                 "官方下载：在<https://my.visualstudio.com/Downloads> 中搜索Build Tools",
                 "TODO:okibcn_ScoopMaster中的这个包没有正式安装的样子，参考以下2019版的安装脚本，提交pr使其正式安装",
                 "https://github.com/okibcn/ScoopMaster/blob/master/bucket/vs_buildtools.json",
-                "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e"
+                "winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e",
+                "https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/"
             ],
             "Name": "msvc2022-buildtools-extra",
             "Source": "okibcn_ScoopMaster",
@@ -226,6 +228,7 @@
         },
         {
             "##": [
+                "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist",
                 "the latest Microsoft Visual C++ Redistributable Packages 2015–2022 x64",
                 "AKA Microsoft Visual C++ runtime",
                 "starship 依赖"
