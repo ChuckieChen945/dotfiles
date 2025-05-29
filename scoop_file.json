@@ -308,6 +308,16 @@
             "Name": "im-select-imm",
             "Source": "PEMessage",
             "Portable": true
+        },
+        {
+            "Name": "quarkpan",
+            "Source": "okibcn_ScoopMaster",
+            "Portable": false
+        },
+        {
+            "Name": "git-annex",
+            "Source": "main",
+            "Portable": true
         }
     ],
     "buckets": [

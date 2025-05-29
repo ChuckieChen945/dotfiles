@@ -25,6 +25,8 @@
     "terminal.integrated.suggest.enabled": true,
     "terminal.integrated.stickyScroll.enabled": true,
     "editor.stickyTabStops": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     // Python
     "python.analysis.autoImportCompletions": true,
     "python.analysis.fixAll": ["source.unusedImports"],
@@ -88,6 +90,9 @@
     "prettier.tabWidth": 4,
     "indentRainbow.indicatorStyle": "light",
     "pangu.auto_format_on_save": true,
+    "[snippets]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     // Leetcode
     "labuladong-leetcode.workspaceFolder": "",
     "labuladong-leetcode.endpoint": "leetcode",
@@ -100,5 +105,15 @@
     "labuladong-leetcode.defaultLanguage": "python3",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
+    },
+    "[properties]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    // markdown
+    "markdown.validate.enabled": true,
+    "markdown.updateLinksOnFileMove.enabled": "prompt",
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false,
+        "editor.wordWrap": "on"
     }
 }

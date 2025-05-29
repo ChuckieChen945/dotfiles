@@ -1,14 +1,20 @@
 [core]
-	symlinks = false
-	autocrlf = true
-	fscache = true
-	editor = code --wait
+    symlinks = true
+    autocrlf = true
+    fscache = true
+    editor = code --wait
+    # 忽略转义字符
+    protectNTFS = false
+    # 禁用换行符转换
+    autocrlf = false
+    # 中文文件名，乱码问题。设为false的话，就不会对0x80以上的字符进行quot
+    quotepath = false
 [color]
-	interactive = true
-	ui = auto
+    interactive = true
+    ui = auto
 [user]
-	name = Chuckie Chen
-	email = chuckie_chen945@qq.com
+    name = Chuckie Chen
+    email = chuckie_chen945@qq.com
 [diff]
     tool = default-difftool
 [difftool "default-difftool"]
@@ -18,11 +24,11 @@
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 [http]
-	proxy = http://127.0.0.1:10808
+    proxy = http://127.0.0.1:10808
 [https]
-	proxy = https://127.0.0.1:10808
+    proxy = https://127.0.0.1:10808
 [safe]
-	directory = *
+    directory = *
 [credential]
-	; 使用scoop安装的git 未注册credential-manager，必须写全路径
-	helper = !\"D:/scoop/apps/git/2.49.0/mingw64/bin/git-credential-manager.exe\"
+    # 使用scoop安装的git 未注册credential-manager，必须写全路径
+    helper = !\"D:/scoop/apps/git/2.49.0/mingw64/bin/git-credential-manager.exe\"
