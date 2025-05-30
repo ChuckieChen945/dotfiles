@@ -315,9 +315,24 @@
             "Portable": false
         },
         {
-            "Name": "git-annex",
+            "Name": "git-extras",
+            "Source": "okibcn_ScoopMaster",
+            "Portable": true
+        },
+        {
+            "Name": "git-lfs",
             "Source": "main",
             "Portable": true
+        },
+        {
+            "Name": "rclone",
+            "Source": "main",
+            "Portable": true
+        },
+        {
+            "Name": "winfsp-np",
+            "Source": "nonportable",
+            "Portable": false
         }
     ],
     "buckets": [
@@ -356,6 +371,10 @@
         {
             "Name": "PEMessage",
             "Source": "https://github.com/PEMessage/im-select-imm"
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable"
         }
     ],
     "config": {

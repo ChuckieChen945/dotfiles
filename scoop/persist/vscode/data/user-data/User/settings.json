@@ -27,21 +27,22 @@
     "editor.stickyTabStops": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        // "**/__pycache__": true,
+        // "**/.cache": true,
+        // "**/.coverage": true,
+        // "**/.coverage.*": true,
+        // "**/.hypothesis": true,
+        // "**/.mypy_cache": true,
+        // "**/.nox": true,
+        // "**/.pytest_cache": true,
+        // "**/.ruff_cache": true,
+        // "**/.tox": true,
+        "**/.git": false // 不再隐藏 .git 目录
+    },
     // Python
     "python.analysis.autoImportCompletions": true,
     "python.analysis.fixAll": ["source.unusedImports"],
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/.cache": true,
-        "**/.coverage": true,
-        "**/.coverage.*": true,
-        "**/.hypothesis": true,
-        "**/.mypy_cache": true,
-        "**/.nox": true,
-        "**/.pytest_cache": true,
-        "**/.ruff_cache": true,
-        "**/.tox": true
-    },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.codeActionsOnSave": {
@@ -115,5 +116,12 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false,
         "editor.wordWrap": "on"
-    }
+    },
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.gitCommands.skipConfirmations": [
+        "fetch:command",
+        "stash-push:command",
+        "switch:command"
+    ],
+    "gitlens.views.commits.showStashes": true
 }
